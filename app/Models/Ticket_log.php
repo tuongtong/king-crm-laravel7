@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class ticket_log extends Model
+class Ticket_log extends Model
 {
     public $timestamps = true;
     public $table = 'ticket_logs';
