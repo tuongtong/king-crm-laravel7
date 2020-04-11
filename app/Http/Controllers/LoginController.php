@@ -13,7 +13,7 @@ class LoginController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/checkauth';
+    protected $redirectTo = '/shift';
     protected $username = 'phone';
     protected $guard = 'staff';
    
@@ -54,5 +54,7 @@ class LoginController extends Controller
     public function getLogout()
     {
         Auth::guard($this->guard)->logout();
+
+        return redirect()->route('guest.login.get');
     }
 }
