@@ -5,10 +5,10 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
-use App\Model\Client;
-use App\Model\Course;
-use App\Model\Course_student;
-use App\Model\Course_log;
+use App\Models\Client;
+use App\Models\Course;
+use App\Models\Course_student;
+use App\Models\Course_log;
 use Core\Services\CourseStudentServiceContract;
 use Core\Services\ClientServiceContract;
 use Core\Services\CourseServiceContract;

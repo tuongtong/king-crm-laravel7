@@ -6,10 +6,10 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
 
 use App\Http\Requests;
-use App\Model\Payment;
-use App\Model\Staff;
-use App\Model\Field;
-use App\Model\Branch;
+use App\Models\Payment;
+use App\Models\Staff;
+use App\Models\Field;
+use App\Models\Branch;
 use Core\Services\PaymentServiceContract;
 use Core\Services\ClientServiceContract;
 

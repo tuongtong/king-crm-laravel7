@@ -11,6 +11,6 @@ class Ticket_status extends Model
     
     public function tickets()
     {
-        return $this->hasMany('App\Model\Ticket');
+        return $this->hasMany('App\Models\Ticket');
     }
 }

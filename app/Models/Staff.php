@@ -18,15 +18,15 @@ class Staff extends Authenticatable
     }
 
     public function tickets() {
-        return $this->hasMany('App\Model\Ticket');
+        return $this->hasMany('App\Models\Ticket');
     }
 
     public function receipts() {
-        return $this->hasMany('App\Model\Receipt');
+        return $this->hasMany('App\Models\Receipt');
     }
 
     public function group()
     {
-        return $this->belongsTo('App\Model\Group', 'group_id');
+        return $this->belongsTo('App\Models\Group', 'group_id');
     }
 }

@@ -5,8 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
-use App\Model\Feedback;
-use App\Model\Ticket;
+use App\Models\Feedback;
+use App\Models\Ticket;
 
 class FeedbackController extends Controller
 {

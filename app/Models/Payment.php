@@ -11,21 +11,21 @@ class Payment extends Model
     
     public function staff()
     {
-        return $this->belongsTo('App\Model\Staff');
+        return $this->belongsTo('App\Models\Staff');
     }
     
     public function client()
     {
-        return $this->belongsTo('App\Model\Client');
+        return $this->belongsTo('App\Models\Client');
     }
     
     public function field()
     {
-        return $this->belongsTo('App\Model\Field');
+        return $this->belongsTo('App\Models\Field');
     }
 
     public function branch()
     {
-        return $this->belongsTo('App\Model\Branch');
+        return $this->belongsTo('App\Models\Branch');
     }
 }

@@ -57,7 +57,7 @@
                 @foreach($tickets as $ticket)
                 <tr>
                   <td>{{$ticket->id}}</td>
-                  <td><a href="{{route('staff.ticket.view.get', ['case_id' => $ticket->id])}}">{{$ticket->model}}</a></td>
+                  <td><a href="{{route('staff.ticket.view.get', ['ticket_id' => $ticket->id])}}">{{$ticket->model}}</a></td>
                   <td>{{$ticket->client->name}}</td>
                   <td>{{$ticket->requestment}}</td>
                   <td>
@@ -66,15 +66,15 @@
                   <td>@if(isset($ticket->price)) @if($ticket->price==0) Miễn phí @else {{MoneyFormat($ticket->price)}} VNĐ @endif @endif</td>
                   <td>
                     <div class="btn-group">
-                      <a href="{{route('staff.ticket.view.get', ['case_id' => $ticket->id])}}" class="btn btn-primary">Xem</a>
+                      <a href="{{route('staff.ticket.view.get', ['ticket_id' => $ticket->id])}}" class="btn btn-primary">Xem</a>
                       <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
                         <span class="caret"></span>
                         <span class="sr-only">Toggle Dropdown</span>
                       </button>
                       <div class="dropdown-menu" role="menu">
-                        <a class="dropdown-item" href="{{route('staff.ticket.printpos.get', ['case_id' => $ticket->id])}}" target="_blank">In máy POS</a>
-                        <a class="dropdown-item" href="{{route('staff.ticket.printinternal.get', ['case_id' => $ticket->id])}}" target="_blank">In phiếu dán</a>
-                        <a class="dropdown-item" href="{{route('staff.ticket.print.get', ['case_id' => $ticket->id])}}" target="_blank">In biên nhận</a>
+                        <a class="dropdown-item" href="{{route('staff.ticket.printpos.get', ['ticket_id' => $ticket->id])}}" target="_blank">In máy POS</a>
+                        <a class="dropdown-item" href="{{route('staff.ticket.printinternal.get', ['ticket_id' => $ticket->id])}}" target="_blank">In phiếu dán</a>
+                        <a class="dropdown-item" href="{{route('staff.ticket.print.get', ['ticket_id' => $ticket->id])}}" target="_blank">In biên nhận</a>
                       </div>
                     </div>
                   </td>

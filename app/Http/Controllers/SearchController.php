@@ -7,8 +7,8 @@ use Illuminate\Support\Facades\Input;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-use App\Model\Client;
-use App\Model\Ticket;
+use App\Models\Client;
+use App\Models\Ticket;
 use Core\Services\TicketServiceContract;
 use Core\Services\ClientServiceContract;
 

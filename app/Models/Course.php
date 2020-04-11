@@ -24,7 +24,7 @@ class Course extends Model
     
     public function courseStudents()
     {
-        return $this->hasMany('App\Model\Course_student');
+        return $this->hasMany('App\Models\Course_student');
     }
 
     public function linkName() {

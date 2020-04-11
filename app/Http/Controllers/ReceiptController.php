@@ -7,11 +7,11 @@ use Illuminate\Support\Facades\Validator;
 use Core\Services\ReceiptServiceContract;
 use Core\Services\ClientServiceContract;
 use App\Http\Requests;
-use App\Model\Client;
-use App\Model\Receipt;
-use App\Model\Field;
-use App\Model\Staff;
-use App\Model\Branch;
+use App\Models\Client;
+use App\Models\Receipt;
+use App\Models\Field;
+use App\Models\Staff;
+use App\Models\Branch;
 
 class ReceiptController extends Controller
 {

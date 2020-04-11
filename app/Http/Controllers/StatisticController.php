@@ -5,11 +5,11 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
-use App\Model\Course_student;
-use App\Model\Ticket;
-use App\Model\Receipt;
-use App\Model\Payment;
-use App\Model\Field;
+use App\Models\Course_student;
+use App\Models\Ticket;
+use App\Models\Receipt;
+use App\Models\Payment;
+use App\Models\Field;
 use Carbon\Carbon;
 
 class StatisticController extends Controller

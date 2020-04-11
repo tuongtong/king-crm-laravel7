@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
-use App\Model\Worklog;
+use App\Models\Worklog;
 use Carbon\Carbon;
 
 class WorklogController extends Controller

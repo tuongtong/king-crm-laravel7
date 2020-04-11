@@ -12,7 +12,7 @@ class Feedback extends Model
 
     public function ticket()
     {
-        return $this->belongsTo('App\Model\Ticket');
+        return $this->belongsTo('App\Models\Ticket');
     }
 
 

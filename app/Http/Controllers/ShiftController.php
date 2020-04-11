@@ -6,8 +6,8 @@ use Illuminate\Http\Request;
 
 use Carbon\Carbon;
 use App\Http\Requests;
-use App\Model\Shift;
-use App\Model\Staff;
+use App\Models\Shift;
+use App\Models\Staff;
 
 class ShiftController extends Controller
 {

@@ -11,11 +11,11 @@ class Field extends Model
     
     public function receipts()
     {
-        return $this->hasMany('App\Model\Receipt', 'field_id');
+        return $this->hasMany('App\Models\Receipt', 'field_id');
     }
 
     public function payment()
     {
-        return $this->hasMany('App\Model\Payment');
+        return $this->hasMany('App\Models\Payment');
     }
 }

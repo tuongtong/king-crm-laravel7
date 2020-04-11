@@ -12,26 +12,26 @@ class Ticket extends Model
     
     public function client()
     {
-        return $this->belongsTo('App\Model\Client');
+        return $this->belongsTo('App\Models\Client');
     }
     
     public function staff()
     {
-        return $this->belongsTo('App\Model\Staff');
+        return $this->belongsTo('App\Models\Staff');
     }
     
     public function ticketLogs()
     {
-        return $this->hasMany('App\Model\Ticket_log')->orderBy('id', 'desc');
+        return $this->hasMany('App\Models\Ticket_log')->orderBy('id', 'desc');
     }
     
     public function ticketStatus()
     {
-        return $this->belongsTo('App\Model\Ticket_status');
+        return $this->belongsTo('App\Models\Ticket_status');
     }
 
     public function feedback()
     {
-        return $this->hasOne('App\Model\Feedback');
+        return $this->hasOne('App\Models\Feedback');
     }
 }

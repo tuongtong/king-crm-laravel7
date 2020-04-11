@@ -10,6 +10,6 @@ class Course_group extends Model
 
     public function courses()
     {
-        return $this->hasMany('App\Model\Course');
+        return $this->hasMany('App\Models\Course');
     }
 }

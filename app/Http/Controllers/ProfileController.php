@@ -6,7 +6,7 @@ use Hash;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
-use App\Model\Staff;
+use App\Models\Staff;
 
 class ProfileController extends Controller
 {

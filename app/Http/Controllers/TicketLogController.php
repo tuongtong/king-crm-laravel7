@@ -7,7 +7,7 @@ use DB;
 use Core\Services\TicketLogServiceContract;
 
 use App\Http\Requests;
-use App\Model\Ticket_log;
+use App\Models\Ticket_log;
 
 class TicketLogController extends Controller
 {

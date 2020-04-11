@@ -14,11 +14,11 @@ class Course_student extends Model
     
     public function client()
     {
-        return $this->belongsTo('App\Model\Client');
+        return $this->belongsTo('App\Models\Client');
     }
     
     public function course()
     {
-        return $this->belongsTo('App\Model\Course');
+        return $this->belongsTo('App\Models\Course');
     }
 }

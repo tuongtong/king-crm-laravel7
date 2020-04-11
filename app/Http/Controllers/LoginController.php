@@ -13,7 +13,7 @@ class LoginController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/tickets';
+    protected $redirectTo = '/checkauth';
     protected $username = 'phone';
     protected $guard = 'staff';
    

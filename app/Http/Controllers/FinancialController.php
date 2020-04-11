@@ -5,9 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
-use App\Model\Receipt;
-use App\Model\Payment;
-use App\Model\Field;
+use App\Models\Receipt;
+use App\Models\Payment;
+use App\Models\Field;
 
 class FinancialController extends Controller
 {

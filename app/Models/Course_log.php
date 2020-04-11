@@ -3,8 +3,8 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
-use App\Model\Course;
-use App\Model\Client;
+use App\Models\Course;
+use App\Models\Client;
 
 class Course_log extends Model
 {
@@ -13,22 +13,22 @@ class Course_log extends Model
     
     public function staff()
     {
-        return $this->belongsTo('App\Model\Staff');
+        return $this->belongsTo('App\Models\Staff');
     }
     
     public function client()
     {
-        return $this->belongsTo('App\Model\Client');
+        return $this->belongsTo('App\Models\Client');
     }
     
     public function course1()
     {
-        return $this->belongsTo('App\Model\Course');
+        return $this->belongsTo('App\Models\Course');
     }
 
     public function course2()
     {
-        return $this->belongsTo('App\Model\Course');
+        return $this->belongsTo('App\Models\Course');
     }
 
     public function setAddClass($class_id) {

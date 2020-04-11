@@ -12,10 +12,10 @@ class Ticket_log extends Model
     
     public function staff()
     {
-        return $this->belongsTo('App\Model\Staff');
+        return $this->belongsTo('App\Models\Staff');
     }
     public function ticket()
     {
-        return $this->belongsTo('App\Model\Ticket');
+        return $this->belongsTo('App\Models\Ticket');
     }
 }

@@ -11,6 +11,6 @@ class Group extends Model
 
     public function staffs()
     {
-        return hasMany('App\Model\Staff');
+        return hasMany('App\Models\Staff');
     }
 }

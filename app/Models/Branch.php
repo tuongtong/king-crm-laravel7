@@ -11,11 +11,11 @@ class Branch extends Model
     
     public function reciepts()
     {
-        return $this->hasMany('App\Model\Receipt');
+        return $this->hasMany('App\Models\Receipt');
     }
 
     public function payments()
     {
-        return $this->hasMany('App\Model\Payment');
+        return $this->hasMany('App\Models\Payment');
     }
 }

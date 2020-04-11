@@ -12,16 +12,16 @@ class Client extends Model
     
     public function tickets()
     {
-        return $this->hasMany('App\Model\Ticket');
+        return $this->hasMany('App\Models\Ticket');
     }
     public function receipts()
     {
-        return $this->hasMany('App\Model\Receipt');
+        return $this->hasMany('App\Models\Receipt');
     }
     
     public function courseStudents()
     {
-        return $this->hasMany('App\Model\Course_student');
+        return $this->hasMany('App\Models\Course_student');
     }
 
     public function linkName() {
