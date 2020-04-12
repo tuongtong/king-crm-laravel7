@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Input;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
@@ -22,9 +21,8 @@ class SearchController extends Controller
         $this->client_service = $client_service;
     }
 
-    public function getSearch() {
-        $keyword = Input::get('keyword');
-        $redirect = Input::get('redirect');
+    public function getSearch(Request $request) {
+        $keyword = $request->keyword;
         if (strlen($keyword) < 10) {
             $data = ticket::findOrFail($keyword);
             return redirect()->route('staff.ticket.view.get', ['ticket_id'=>$data->id]);

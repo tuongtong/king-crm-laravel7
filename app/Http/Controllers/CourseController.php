@@ -31,8 +31,7 @@ class CourseController extends Controller
     }
     
     public function postAdd(Request $req) {
-        $data = $req->only($this->model->fillable);
-        $course_id = $this->service->store($data);
+        $course_id = $this->service->store($req);
         return redirect()->route('staff.course.list.get')->with('success', 'Đã thêm thành công!');
     }
 

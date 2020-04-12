@@ -3,7 +3,8 @@
 namespace Core\Services;
 
 use Core\Repositories\CourseRepositoryContract;
-use App\Helpers\DownloadExcel;
+use Excel;
+use App\Exports\CourseStudentListExport;
 
 class CourseService implements CourseServiceContract
 {
@@ -59,15 +60,6 @@ class CourseService implements CourseServiceContract
     public function download($id)
     {
         $course = $this->find($id);
-        $students = $course->courseStudents;
-        foreach ($students as $i => $student) {
-            $student_arr[$i]['name'] = $student->client->name;
-            $student_arr[$i]['phone'] = $student->client->phone;
-            $student_arr[$i]['email'] = $student->client->email;
-            $student_arr[$i]['deal_rate'] = $student->deal_rate;
-            $student_arr[$i]['deal_note'] = $student->deal_note;
-            $student_arr[$i]['tuition_done'] = $student->tuition_done;
-        }
-        return new DownloadExcel($course->shortname.'-list', 'xls', $student_arr);
+        return Excel::download(new CourseStudentListExport($course), $course->shortname.'-list.xlsx');
     }
 }

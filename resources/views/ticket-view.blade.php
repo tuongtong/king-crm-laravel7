@@ -86,7 +86,7 @@
                     @if($data->id == 3) 
                     <a class="dropdown-item" onclick="checkDone()">{{$data->name}}</a>
                     @else
-                    <a class="dropdown-item" href="{{route('staff.ticket.changestatus.get', ['case_id'=>$ticket->id, 'status_id'=>$data->id])}}">{{$data->name}}</a>
+                    <a class="dropdown-item" href="{{route('staff.ticket.changestatus.get', ['ticket_id'=>$ticket->id, 'status_id'=>$data->id])}}">{{$data->name}}</a>
                     @endif
                     @endforeach
                   </div>
@@ -159,20 +159,20 @@
             <div class="row no-print">
               <div class="col-12">
                 <a href="{{ route('staff.client.edit.get', ['client_id' => $ticket->client->id]) }}" class="btn btn-default">Sửa khách hàng</a>
-                <a href="{{ route('staff.ticket.edit.get', ['case_id' => $ticket->id]) }}" class="btn btn-default">Sửa biên nhận</a>
+                <a href="{{ route('staff.ticket.edit.get', ['ticket_id' => $ticket->id]) }}" class="btn btn-default">Sửa biên nhận</a>
 
                 <div class="btn-group float-right">
-                  <a href="{{ route('staff.ticket.printpos.get', ['case_id' => $ticket->id]) }}" target="_blank" class="btn btn-primary" id="btnIn"><i class="fa fa-print"></i>&nbsp;&nbsp;IN MÁY POS</a>
+                  <a href="{{ route('staff.ticket.printpos.get', ['ticket_id' => $ticket->id]) }}" target="_blank" class="btn btn-primary" id="btnIn"><i class="fa fa-print"></i>&nbsp;&nbsp;IN MÁY POS</a>
                   <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
                     <span class="caret"></span>
                     <span class="sr-only">Toggle Dropdown</span>
                   </button>
                   <div class="dropdown-menu" role="menu">
-                    <a class="dropdown-item" href="{{ route('staff.ticket.print.get', ['case_id' => $ticket->id]) }}" target="_blank">In biên nhận</a>
+                    <a class="dropdown-item" href="{{ route('staff.ticket.print.get', ['ticket_id' => $ticket->id]) }}" target="_blank">In biên nhận</a>
                   </div>
                 </div>
                 
-                <a href="{{ route('staff.ticket.printinternal.get', ['case_id' => $ticket->id]) }}" target="_blank" class="btn btn float-right"><i class="fa fa-print"></i>&nbsp;&nbsp;IN PHIẾU DÁN</a>
+                <a href="{{ route('staff.ticket.printinternal.get', ['ticket_id' => $ticket->id]) }}" target="_blank" class="btn btn float-right"><i class="fa fa-print"></i>&nbsp;&nbsp;IN PHIẾU DÁN</a>
               </div>
             </div>
           </div>
@@ -300,7 +300,7 @@
     } else {
       price = input;
     }
-    window.location.href = "{{route('staff.ticket.changestatus.get', ['case_id'=>$ticket->id, 'status_id'=>3])}}/"+price;
+    window.location.href = "{{route('staff.ticket.changestatus.get', ['ticket_id'=>$ticket->id, 'status_id'=>3])}}/"+price;
   }
 </script>
 @stop

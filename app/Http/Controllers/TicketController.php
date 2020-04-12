@@ -57,7 +57,7 @@ class TicketController extends Controller
     
     public function postAdd(Request $req) {
         $ticket = $this->service->store($req);        
-        return redirect()->route('staff.ticket.view.get', ['case_id' => $ticket->id]);
+        return redirect()->route('staff.ticket.view.get', ['ticket_id' => $ticket->id]);
     }
     
     public function getUseOld($ticket_id) {
@@ -73,7 +73,7 @@ class TicketController extends Controller
     
     public function postEdit(Request $req) {
         $this->service->update($req->id, $req);
-        return redirect()->route('staff.ticket.view.get', ['case_id' => $req->id])->with('success', 'Đã cập nhật thành công!');
+        return redirect()->route('staff.ticket.view.get', ['ticket_id' => $req->id])->with('success', 'Đã cập nhật thành công!');
     }
 
 }

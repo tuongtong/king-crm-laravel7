@@ -45,7 +45,7 @@
                 <td>{{$data->id}}</td>
                 <td>{{$data->requestment}}</td>
                 <td>CPU {{$data->cpu}}, RAM {{$data->ram}}, Ổ CỨNG {{$data->storage}}</td>
-                <td><a href="{{route('staff.ticket.useold.get', ['case_id' => $data->id])}}" class="btn btn-block btn-primary">Sử dụng</a></td>
+                <td><a href="{{route('staff.ticket.useold.get', ['ticket_id' => $data->id])}}" class="btn btn-block btn-primary">Sử dụng</a></td>
               </tr>
               @endforeach
             </table>

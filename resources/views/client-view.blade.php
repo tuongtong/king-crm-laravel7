@@ -118,7 +118,7 @@
                     <td>
                       <span class="badge bg-{{$data->ticketStatus->class}}">{{$data->ticketStatus->name}}</span>
                     </td>
-                    <td><a href="{{route('staff.ticket.view.get', ['case_id' => $data->id])}}" class="btn btn-primary">Xem</a></td>
+                    <td><a href="{{route('staff.ticket.view.get', ['ticket_id' => $data->id])}}" class="btn btn-primary">Xem</a></td>
                   </tr>
                   @endforeach
                   </tfoot>
