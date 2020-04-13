@@ -86,7 +86,6 @@
             <div class="col-12">
               <a href="{{ route('staff.payment.edit.get', ['payment_id' => $payment->id]) }}" class="btn btn-default">Sửa phiếu chi</a>
               <a href="{{ route('staff.payment.destroy.get', ['payment_id' => $payment->id]) }}" class="text-danger ml-2">Xoá</a>
-              <a href="{{ route('staff.payment.print.get', ['payment_id' => $payment->id]) }}" target="_blank" class="btn btn-primary float-right" id="btnIn"><i class="fa fa-print"></i>&nbsp;&nbsp;IN PHIẾU chi</a>
             </div>
           </div>
         </div>

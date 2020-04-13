@@ -43,11 +43,11 @@ Route::group(['prefix' => '','middleware' => 'staff'], function()
         Route::get('/', 'ClientController@getList')->name('staff.client.list.get');
         Route::get('/search', 'ClientController@getSearch')->name('staff.client.search.get');
         Route::post('/search', 'ClientController@postSearch')->name('staff.client.search.post');
-        Route::get('/{client_id}', 'ClientController@getView')->where('client_id', '[0-9]+')->name('staff.client.view.get');
+        Route::get('/{client_id}', 'ClientController@getView')->name('staff.client.view.get');
         Route::get('/add/{phone?}', 'ClientController@getAdd')->name('staff.client.add.get');
         Route::post('/add', 'ClientController@postAdd')->name('staff.client.add.post');
-        Route::get('/edit/{client_id}', 'ClientController@getEdit')->name('staff.client.edit.get')->middleware('leader');
-        Route::post('/edit/{client_id}', 'ClientController@postEdit')->name('staff.client.edit.post')->middleware('leader');
+        Route::get('/edit/{client_id}', 'ClientController@getEdit')->name('staff.client.edit.get');
+        Route::post('/edit/{client_id}', 'ClientController@postEdit')->name('staff.client.edit.post');
         Route::get('/export', 'ClientController@getExport')->name('staff.client.export.get');
         Route::get('/export/edu', 'ClientController@getExportEdu')->name('staff.client.exportedu.get');
         Route::get('/export/tech', 'ClientController@getExportTech')->name('staff.client.exporttech.get');
@@ -65,11 +65,11 @@ Route::group(['prefix' => '','middleware' => 'staff'], function()
         Route::get('/field/{field_id}', 'ReceiptController@getListbyField')->name('staff.receipt.listbyfield.get');
         Route::get('/{receipt_id}', 'ReceiptController@getView')->name('staff.receipt.view.get');
         Route::get('/print/{receipt_id}', 'ReceiptController@getPrint')->name('staff.receipt.print.get');
-        Route::get('/add/{client_id}', 'ReceiptController@getAdd')->name('staff.receipt.add.get')->middleware('leader');
-        Route::post('/add', 'ReceiptController@postAdd')->name('staff.receipt.add.post')->middleware('leader');
-        Route::get('/edit/{receipt_id}', 'ReceiptController@getEdit')->name('staff.receipt.edit.get')->middleware('leader');
-        Route::post('/edit/{receipt_id}', 'ReceiptController@postEdit')->name('staff.receipt.edit.post')->middleware('leader');
-        Route::get('/destroy/{receipt_id}', 'ReceiptController@getDestroy')->name('staff.receipt.destroy.get')->middleware('leader');
+        Route::get('/add/{client_id}', 'ReceiptController@getAdd')->name('staff.receipt.add.get')->middleware('manager');
+        Route::post('/add', 'ReceiptController@postAdd')->name('staff.receipt.add.post')->middleware('manager');
+        Route::get('/edit/{receipt_id}', 'ReceiptController@getEdit')->name('staff.receipt.edit.get')->middleware('manager');
+        Route::post('/edit/{receipt_id}', 'ReceiptController@postEdit')->name('staff.receipt.edit.post')->middleware('manager');
+        Route::get('/destroy/{receipt_id}', 'ReceiptController@getDestroy')->name('staff.receipt.destroy.get')->middleware('manager');
     });
 
     Route::group(['prefix' => 'payments'], function ()
@@ -77,11 +77,11 @@ Route::group(['prefix' => '','middleware' => 'staff'], function()
         Route::get('/', 'PaymentController@getList')->name('staff.payment.list.get');
         Route::get('/{payment_id}', 'PaymentController@getView')->name('staff.payment.view.get');
         Route::get('/print/{payment_id}', 'PaymentController@getPrint')->name('staff.payment.print.get');
-        Route::get('/add/{client_id}', 'PaymentController@getAdd')->name('staff.payment.add.get')->middleware('leader');
-        Route::post('/add', 'PaymentController@postAdd')->name('staff.payment.add.post')->middleware('leader');
-        Route::get('/edit/{payment_id}', 'PaymentController@getEdit')->name('staff.payment.edit.get')->middleware('leader');
-        Route::post('/edit/{payment_id}', 'PaymentController@postEdit')->name('staff.payment.edit.post')->middleware('leader');
-        Route::get('/destroy/{payment_id}', 'PaymentController@getDestroy')->name('staff.payment.destroy.get')->middleware('leader');
+        Route::get('/add/{client_id}', 'PaymentController@getAdd')->name('staff.payment.add.get')->middleware('manager');
+        Route::post('/add', 'PaymentController@postAdd')->name('staff.payment.add.post')->middleware('manager');
+        Route::get('/edit/{payment_id}', 'PaymentController@getEdit')->name('staff.payment.edit.get')->middleware('manager');
+        Route::post('/edit/{payment_id}', 'PaymentController@postEdit')->name('staff.payment.edit.post')->middleware('manager');
+        Route::get('/destroy/{payment_id}', 'PaymentController@getDestroy')->name('staff.payment.destroy.get')->middleware('manager');
     });
     
     Route::group(['prefix' => 'tickets'], function() 

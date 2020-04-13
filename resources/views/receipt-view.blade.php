@@ -92,7 +92,6 @@
             <div class="col-12">
               <a href="{{ route('staff.receipt.edit.get', ['receipt_id' => $receipt->id])}}" class="btn btn-default" >Sửa phiếu thu</a>
               <a href="{{ route('staff.receipt.destroy.get', ['receipt_id' => $receipt->id]) }}" class="text-danger ml-2">Xoá</a>
-              <a href="{{ route('staff.receipt.print.get', ['receipt_id' => $receipt->id])}}" target="_blank" class="btn btn-primary float-right" id="btnIn"><i class="fa fa-print"></i>&nbsp;&nbsp;IN PHIẾU THU</a>
             </div>
           </div>
         </div>

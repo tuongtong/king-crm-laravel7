@@ -17,6 +17,11 @@ class CourseRepository implements CourseRepositoryContract
         return $this->model->where('is_expected', '!=', '1')->get();
     }
 
+    public function list()
+    {
+        return $this->model->where('is_expected', '!=', '1')->with('courseStudents')->get();
+    }
+
     public function show($id)
     {
         return $this->model->with('courseStudents.client')->findOrFail($id);
@@ -24,7 +29,7 @@ class CourseRepository implements CourseRepositoryContract
 
     public function getExpected()
     {
-        return $this->model->where('is_expected', '=', '1')->get();
+        return $this->model->where('is_expected', '=', '1')->with('courseStudents')->get();
     }
     
     public function paginate() {

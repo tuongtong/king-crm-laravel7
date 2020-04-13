@@ -74,12 +74,14 @@
                   <b>Ngành học</b> @if ($client->major!="") <a class="float-right">{{$client->major}}</a> @else <a class="float-right">Không có</a> @endif
                 </li>
               </ul>
+              @if(UserInfo()->level >= 3)
               <a href="{{route('staff.payment.add.get', ['client_id'=>$client->id])}}" class="btn btn-block btn-default" id="btnThemphieuchi">
               <i class="fa fa-arrow-right"></i> Thêm phiếu chi (F6)
               </a>
               <a href="{{route('staff.receipt.add.get', ['client_id'=>$client->id])}}" class="btn btn-block btn-default" id="btnThemphieuthu">
               <i class="fa fa-arrow-left"></i> Thêm phiếu thu (F7)
               </a>
+              @endif
               <a href="{{route('staff.ticket.add.get', ['client_id'=>$client->id])}}" class="btn btn-block btn-default" id="btnThembiennhan">
               <i class="fa fa-book"></i> Thêm biên nhận (F8)
               </a>
@@ -149,9 +151,9 @@
                   <tr>
                     <td>{!!$data->course->linkName()!!}</td>
                     <td>{{$data->deal_rate or 0}}%</td>
-                    <td>{{$data->course->tuition * (1-$data->deal_rate/100)}}</td>
-                    <td>{{$data->tuition_done}}</td>
-                    <td>{{$data->course->tuition * (1-$data->deal_rate/100) - $data->tuition_done}}</td>
+                    <td>{{MoneyFormat($data->course->tuition * (1-$data->deal_rate/100))}}</td>
+                    <td>{{MoneyFormat($data->tuition_done)}}</td>
+                    <td>{{MoneyFormat($data->course->tuition * (1-$data->deal_rate/100) - $data->tuition_done)}}</td>
                     <td><a href="{{route('staff.coursestudent.edit.get', ['coursestudent_id' => $data->id])}}" class="btn btn-primary">Sửa</a></td>
                   </tr>
                   @endforeach

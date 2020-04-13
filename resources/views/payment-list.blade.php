@@ -54,7 +54,7 @@
                   <td>{{$data->client->name}}</td>
                   <td>{{$data->content}}</td>
                   <td>{{number_format($data->amount,0,",",".")}} ₫</td>
-                  <td><a href="{{route('staff.payment.view.get', ['receipt_id' => $data->id])}}" class="btn btn-primary">Xem</a></td>
+                  <td><a href="{{route('staff.payment.view.get', ['payment_id' => $data->id])}}" class="btn btn-primary">Xem</a></td>
                 </tr>
                 @endforeach
                 </tfoot>

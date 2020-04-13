@@ -20,6 +20,11 @@ class CourseService implements CourseServiceContract
         return $this->repository->all();
     }
 
+    public function list()
+    {
+        return $this->repository->list();
+    }
+
     public function show($id)
     {
         return $this->repository->show($id);

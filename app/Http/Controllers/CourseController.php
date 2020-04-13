@@ -20,7 +20,7 @@ class CourseController extends Controller
     }
     
     public function getList() {
-        $data['courses'] = $this->service->all();
+        $data['courses'] = $this->service->list();
         $data['expected_courses'] = $this->service->getExpected();
         return view('course-list', $data);
     }
