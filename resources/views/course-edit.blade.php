@@ -1,7 +1,7 @@
 @extends('master')
 
 @section('head')
-<title>DEMO20 | Sửa thông tin lớp học</title>
+<title>KING | Sửa thông tin lớp học</title>
 <link rel="stylesheet" href="{{ asset('bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css') }}">
 @stop
 

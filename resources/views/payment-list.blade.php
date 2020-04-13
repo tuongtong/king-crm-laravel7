@@ -1,6 +1,6 @@
 @extends('master')
 @section('head')
-<title>DEMO20 | Sổ phiếu chi</title>
+<title>KING | Sổ phiếu chi</title>
 <link rel="stylesheet" href="{{secure_asset('plugins/datatables/dataTables.bootstrap4.css')}}">
 @stop
 @section('main')

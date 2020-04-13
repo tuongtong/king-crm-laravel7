@@ -1,6 +1,6 @@
 @extends('master')
 @section('head')
-<title>DEMO20 | Thống kê tài chính</title>
+<title>KING | Thống kê tài chính</title>
 <link rel="stylesheet" href="{{secure_asset('plugins/datatables/dataTables.bootstrap4.css')}}">
 <style>
   .pagination li {

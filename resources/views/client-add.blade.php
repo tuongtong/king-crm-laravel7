@@ -1,6 +1,6 @@
 @extends('master')
 @section('head')
-<title>DEMO20 | Thêm khách hàng mới</title>
+<title>KING | Thêm khách hàng mới</title>
 @stop
 @section('main')
   <!-- Content Wrapper. Contains page content -->

@@ -1,7 +1,7 @@
 @extends('master')
 
 @section('head')
-<title>DEMO20 | Báo cáo công việc</title>
+<title>KING | Báo cáo công việc</title>
 <link rel="stylesheet" href="{{ secure_asset('plugins/select2/select2.min.css') }}">
 @stop
 

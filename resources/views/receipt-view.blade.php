@@ -1,6 +1,6 @@
 @extends('master')
 @section('head')
-<title>DEMO20 | Xem phiếu thu #{{$receipt->id}}</title>
+<title>KING | Xem phiếu thu #{{$receipt->id}}</title>
 <link rel="stylesheet" href="{{secure_asset('plugins/datatables/dataTables.bootstrap4.css')}}">
 <link rel="stylesheet" href="{{secure_asset('plugins/iCheck/square/blue.css')}}">
 @stop

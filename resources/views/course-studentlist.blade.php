@@ -1,6 +1,6 @@
 @extends('master')
 @section('head')
-<title>DEMO20 | Danh sách lớp</title>
+<title>KING | Danh sách lớp</title>
 <link rel="stylesheet" href="{{secure_asset('plugins/datatables/dataTables.bootstrap4.css')}}">
 @stop
 @section('main')

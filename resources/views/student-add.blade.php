@@ -1,7 +1,7 @@
 @extends('master')
 
 @section('head')
-<title>DEMO20 | Thêm học viên</title>
+<title>KING | Thêm học viên</title>
 <link rel="stylesheet" href="{{ secure_asset('plugins/select2/select2.min.css') }}">
 @stop
   

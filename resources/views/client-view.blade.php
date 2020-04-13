@@ -1,6 +1,6 @@
 @extends('master')
 @section('head')
-<title>DEMO20 | Khách hàng: {{$client->name}}</title>
+<title>KING | Khách hàng: {{$client->name}}</title>
 <link rel="stylesheet" href="{{secure_asset('plugins/datatables/dataTables.bootstrap4.css')}}">
 @stop
 @section('main')

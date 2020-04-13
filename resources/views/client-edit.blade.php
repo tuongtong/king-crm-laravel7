@@ -1,6 +1,6 @@
 @extends('master')
 @section('head')
-<title>DEMO20 | Sửa khách hàng: {{$client->ten}}</title>
+<title>KING | Sửa khách hàng: {{$client->ten}}</title>
 @stop
 @section('main')
   <!-- Content Wrapper. Contains page content -->

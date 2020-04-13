@@ -1,6 +1,6 @@
 @extends('master')
 @section('head')
-<title>DEMO20 | Nhập biên nhận mới</title>
+<title>KING | Nhập biên nhận mới</title>
 @stop
 @section('main')
 <!-- Content Wrapper. Contains page content -->

@@ -1,6 +1,6 @@
 @extends('master')
 @section('head')
-<title>DEMO20 | Thông tin cá nhân</title>
+<title>KING | Thông tin cá nhân</title>
 @stop
 @section('main')
   <!-- Content Wrapper. Contains page content -->

@@ -1,6 +1,6 @@
 @extends('master')
 @section('head')
-<title>DEMO20 | Sổ biên nhận</title>
+<title>KING | Sổ biên nhận</title>
 <link rel="stylesheet" href="{{secure_asset('plugins/datatables/dataTables.bootstrap4.css')}}">
 <style>
   .pagination li {
