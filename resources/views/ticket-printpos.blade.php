@@ -147,7 +147,7 @@
         </div>
         <!--End Invoice Mid-->
 
-        <center>{!! QrCode::size(150)->margin(0)->generate('http://sys.eduking.edu.vn/tracking/'.$ticket->id.'/'.substr($ticket->client->phone, -6)) !!}</center><br>
+        <center>{!! QrCode::size(150)->margin(0)->generate('http://crm.techking.vn/tracking/'.$ticket->id.'/'.substr($ticket->client->phone, -6)) !!}</center><br>
         <div id="bot">
             <div id="table">
                 <table>
@@ -163,7 +163,7 @@
                                 <td style="text-align: justify;"><strong>Đường dẫn trực tiếp:</strong></td>
                             </tr>
                             <tr>
-                                <td style="text-align: justify;">{!! '<i class="fa fa-globe"></i> sys.eduking.edu.vn<br>/tracking/'.$ticket->id.'/'.substr($ticket->client->phone, -6) !!}</td>
+                                <td style="text-align: justify;">{!! '<i class="fa fa-globe"></i> crm.techking.edu.vn<br>/tracking/'.$ticket->id.'/'.substr($ticket->client->phone, -6) !!}</td>
                             </tr>
                         </table>
                     </tr>
