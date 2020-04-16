@@ -28,13 +28,15 @@ class ServiceService implements ServiceServiceContract
         return $this->repository->find($id);
     }
 
-    public function store($data)
+    public function store($req)
     {
+        $data = $this->repository->fillable($req);
         return $this->repository->store($data);
     }
 
-    public function update($id, $data)
+    public function update($id, $req)
     {
+        $data = $this->repository->fillable($req);
         return $this->repository->update($id, $data);
     }
 

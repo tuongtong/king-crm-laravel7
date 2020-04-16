@@ -103,6 +103,16 @@ Route::group(['prefix' => '','middleware' => 'staff'], function()
         Route::post('/rate/{ticket_id}', 'TicketRateController@postRate')->name('staff.ticket.rate.post');
     });
 
+    Route::group(['prefix' => 'services'], function() 
+    {
+        Route::get('/', 'ServiceController@getList')->name('staff.service.list.get');
+        Route::get('/add', 'ServiceController@getAdd')->name('staff.service.add.get');
+        Route::post('/add', 'ServiceController@postAdd')->name('staff.service.add.post');
+        Route::get('/edit/{service_id}', 'ServiceController@getEdit')->name('staff.service.edit.get')->middleware('leader');
+        Route::post('/edit/{service_id}', 'ServiceController@postEdit')->name('staff.service.edit.post')->middleware('leader');
+        Route::get('/delete/{service_id}', 'ServiceController@getDelete')->name('staff.service.delete.get')->middleware('leader');
+    });
+
     Route::group(['prefix' => 'statistic'], function() 
     {
         Route::get('/finance', 'StatisticController@getFinance')->name('staff.statistic.finance.get');

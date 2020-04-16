@@ -16,6 +16,11 @@ class ServiceRepository implements ServiceRepositoryContract
     {
         return $this->model->all();
     }
+
+    public function getList()
+    {
+        return $this->model->withCount('tickets')->get();
+    }
     
     public function paginate() {
         return $this->model->paginate(10);
@@ -39,8 +44,8 @@ class ServiceRepository implements ServiceRepositoryContract
         return $model->destroy($id);
     }
 
-    public function getList()
+    public function fillable($req)
     {
-        return $this->model->with('ticket', 'staff')->get();
+        return $req->only($this->model->fillable);
     }
 }

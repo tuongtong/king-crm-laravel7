@@ -11,4 +11,5 @@ interface ServiceRepositoryContract
     public function update($id, $data);
     public function destroy($id);
     public function getList();
+    public function fillable($req);
 }

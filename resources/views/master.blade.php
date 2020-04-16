@@ -180,6 +180,29 @@
           </li>
           <li class="nav-item has-treeview">
             <a href="#" class="nav-link ">
+              <i class="nav-icon fa fa-cube"></i>
+              <p>
+                Dịch vụ
+                <i class="right fa fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="{{route('staff.service.list.get')}}" class="nav-link">
+                  <i class="fa fa-list nav-icon"></i>
+                  <p>Danh sách</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{route('staff.service.add.get')}}" class="nav-link">
+                  <i class="fa fa-history nav-icon"></i>
+                  <p>Thêm dịch vụ</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item has-treeview">
+            <a href="#" class="nav-link ">
               <i class="nav-icon fa fa-university"></i>
               <p>
                 Lớp học
