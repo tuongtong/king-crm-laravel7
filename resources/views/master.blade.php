@@ -141,6 +141,12 @@
                   <p>Đăng ký lịch làm</p>
                 </a>
               </li>
+              <li class="nav-item">
+                <a href="{{route('staff.statistic.finance.get')}}" class="nav-link">
+                  <i class="fa fa-bar-chart nav-icon"></i>
+                  <p>Xem thống kê</p>
+                </a>
+              </li>
             </ul>
           </li>
           <li class="nav-item has-treeview">
@@ -168,12 +174,6 @@
                 <a href="{{route('staff.feedback.list.get')}}" class="nav-link">
                   <i class="fa fa-heartbeat nav-icon"></i>
                   <p>Chăm sóc khách hàng</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="{{route('staff.statistic.finance.get')}}" class="nav-link">
-                  <i class="fa fa-bar-chart nav-icon"></i>
-                  <p>Xem thống kê</p>
                 </a>
               </li>
             </ul>
@@ -255,24 +255,6 @@
             <ul class="nav nav-treeview">
             </ul>
           </li>
-          <!-- <li class="nav-item has-treeview">-->
-          <!--  <a href="#" class="nav-link ">-->
-          <!--    <i class="nav-icon fa fa-line-chart"></i>-->
-          <!--    <p>-->
-          <!--      Thống kê-->
-          <!--      <i class="right fa fa-angle-left"></i>-->
-          <!--    </p>-->
-          <!--  </a>-->
-          <!--  <ul class="nav nav-treeview">-->
-          <!--    <li class="nav-item">-->
-          <!--      <a href="/thongke/biennhan/2019" class="nav-link">-->
-          <!--        <i class="fa fa-circle-o nav-icon"></i>-->
-          <!--        <p>Kỹ thuật 2019</p>-->
-          <!--      </a>-->
-          <!--    </li>-->
-          <!--  </ul>-->
-          <!--</li> -->
-
           <li class="nav-item has-treeview">
             <a href="#" class="nav-link ">
               <i class="nav-icon fa fa-link"></i>
