@@ -34,4 +34,9 @@ class Ticket extends Model
     {
         return $this->hasOne('App\Models\Feedback');
     }
+
+    public function services()
+    {
+        return $this->belongsToMany('App\Models\Service');
+    }
 }

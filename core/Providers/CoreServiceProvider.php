@@ -43,6 +43,10 @@ use Core\Repositories\CourseLogRepository;
 use Core\Repositories\CourseLogRepositoryContract;
 use Core\Services\CourseLogService;
 use Core\Services\CourseLogServiceContract;
+use Core\Repositories\ServiceRepository;
+use Core\Repositories\ServiceRepositoryContract;
+use Core\Services\ServiceService;
+use Core\Services\ServiceServiceContract;
 
 class CoreServiceProvider extends ServiceProvider 
 {
@@ -73,5 +77,7 @@ class CoreServiceProvider extends ServiceProvider
         $this->app->bind(CourseGroupServiceContract::class, CourseGroupService::class);
         $this->app->bind(CourseLogRepositoryContract::class, CourseLogRepository::class);
         $this->app->bind(CourseLogServiceContract::class, CourseLogService::class);
+        $this->app->bind(ServiceRepositoryContract::class, ServiceRepository::class);
+        $this->app->bind(ServiceServiceContract::class, ServiceService::class);
     }
 }

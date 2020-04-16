@@ -194,7 +194,12 @@
 
                     <tr class="service">
                         <td class="tableitem">
-                            <p class="itemtext">{{$ticket->requestment}}</p>
+                            <p class="itemtext">
+                                @foreach($ticket->services as $service)
+                                {{$service->name}}, 
+                                @endforeach
+                                {{$ticket->requestment}}
+                            </p>
                         </td>
                     </tr>
                 </table>

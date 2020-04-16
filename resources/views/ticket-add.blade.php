@@ -1,6 +1,7 @@
 @extends('master')
 @section('head')
 <title>KING | Nhập biên nhận mới</title>
+<link rel="stylesheet" href="{{secure_asset('plugins/select2/select2.min.css')}}">
 @stop
 @section('main')
 <!-- Content Wrapper. Contains page content -->
@@ -28,28 +29,28 @@
     <div class="col-md-12">
       @if(count($client->tickets)>0)
       <div class="card card-default">
-          <!--<div class="card-header with-border">-->
-          <!--  <h3 class="card-title">Biên nhận trước đó</h3>-->
-          <!--</div>-->
-          <!-- /.box-header -->
-          <div class="card-body">
-            <table class="table table-bordered">
-              <tr>
-                <th>ID</th>
-                <th>Dòng máy</th>
-                <th>Cấu hình</th>
-                <th></th>
-              </tr>
-              @foreach($client->tickets as $data)
-              <tr>
-                <td>{{$data->id}}</td>
-                <td>{{$data->requestment}}</td>
-                <td>CPU {{$data->cpu}}, RAM {{$data->ram}}, Ổ CỨNG {{$data->storage}}</td>
-                <td><a href="{{route('staff.ticket.useold.get', ['ticket_id' => $data->id])}}" class="btn btn-block btn-primary">Sử dụng</a></td>
-              </tr>
-              @endforeach
-            </table>
-          </div>
+        <!--<div class="card-header with-border">-->
+        <!--  <h3 class="card-title">Biên nhận trước đó</h3>-->
+        <!--</div>-->
+        <!-- /.box-header -->
+        <div class="card-body">
+          <table class="table table-bordered">
+            <tr>
+              <th>ID</th>
+              <th>Dòng máy</th>
+              <th>Cấu hình</th>
+              <th></th>
+            </tr>
+            @foreach($client->tickets as $data)
+            <tr>
+              <td>{{$data->id}}</td>
+              <td>{{$data->requestment}}</td>
+              <td>CPU {{$data->cpu}}, RAM {{$data->ram}}, Ổ CỨNG {{$data->storage}}</td>
+              <td><a href="{{route('staff.ticket.useold.get', ['ticket_id' => $data->id])}}" class="btn btn-block btn-primary">Sử dụng</a></td>
+            </tr>
+            @endforeach
+          </table>
+        </div>
       </div>
       @endif
       <div class="card card-primary">
@@ -62,19 +63,28 @@
           {{csrf_field()}}
           <div class="card-body">
             <div class="form-group">
-              <label for="inputSostt">Tên Khách Hàng:</label> {{$client->name}}   |   
-              <label for="inputSostt">Số Điện Thoại:</label> {{$client->phone}}    |    
+              <label for="inputSostt">Tên Khách Hàng:</label> {{$client->name}} |
+              <label for="inputSostt">Số Điện Thoại:</label> {{$client->phone}} |
               <label for="inputSostt">Ngày Sinh:</label> {{date("d/m/Y", strtotime($client->birthday))}}
               <input name="client_id" type="hidden" class="form-control" value="{{$client->id}}">
               <input name="staff_id" type="hidden" class="form-control" value="{{UserInfo()->id}}">
             </div>
             <div class="form-group">
-              <label for="requestment">Yêu cầu khách hàng:</label>
-              <input name="requestment" type="text" class="form-control" id="requestment" placeholder="Cần xử lý những gì?" autofocus required>
+              <label>Dịch vụ:</label>
+              <select name="services[]" class="form-control select2" multiple="multiple" data-placeholder="Cài Windows? Office?" autofocus required>
+              @foreach($services as $service)
+                <option value="{{$service->id}}">{{$service->name}}</option>
+              @endforeach
+              </select>
+            </div>
+            <!-- /.form-group -->
+            <div class="form-group">
+              <label for="requestment">Yêu cầu khác:</label>
+              <input name="requestment" type="text" class="form-control" id="requestment" placeholder="Cần xử lý những gì?">
             </div>
             <div class="form-group">
               <label for="model">Dòng máy:</label>
-              <input name="model"type="text" class="form-control" id="model" placeholder="Asus N53TK, Dell Inspiron 15,..." @if(isset($ticket_old)) value="{{$ticket_old->model}}" @endif required>
+              <input name="model" type="text" class="form-control" id="model" placeholder="Asus N53TK, Dell Inspiron 15,..." @if(isset($ticket_old)) value="{{$ticket_old->model}}" @endif required>
             </div>
             <div class="form-group">
               <label for="cpu">CPU:</label>
@@ -110,4 +120,15 @@
   <!-- /.content -->
 </div>
 <!-- /.content-wrapper -->
+@stop
+
+@section('script')
+<!-- Select2 -->
+<script src="{{secure_asset('plugins/select2/select2.full.min.js')}}"></script>
+
+<script>
+  $(function () {
+    $('.select2').select2()
+  });
+</script>
 @stop

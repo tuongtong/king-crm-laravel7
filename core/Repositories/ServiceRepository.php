@@ -1,20 +1,20 @@
 <?php
 
 namespace Core\Repositories;
-use App\Models\Ticket;
+use App\Models\Service;
 
-class TicketRepository implements TicketRepositoryContract
+class ServiceRepository implements ServiceRepositoryContract
 {
     protected $model;
 
-    public function __construct(ticket $model)
+    public function __construct(Service $model)
     {
         $this->model = $model;
     }
 
     public function all()
     {
-        return $this->model->with('client', 'ticketStatus', 'services')->orderBy('id', 'desc')->get();
+        return $this->model->all();
     }
     
     public function paginate() {
@@ -39,18 +39,8 @@ class TicketRepository implements TicketRepositoryContract
         return $model->destroy($id);
     }
 
-    public function getAllWithoutDone()
+    public function getList()
     {
-        return $this->model->where('ticket_status_id', '!=', 5)->with('client', 'ticketStatus', 'feedback')->orderBy('id', 'desc')->paginate(50);
-    }
-
-    public function getView($id)
-    {
-        return $this->model->with('ticketLogs.staff')->find($id); 
-    }
-
-    public function fillable($data)
-    {
-        return $data->only($this->model->fillable);
+        return $this->model->with('ticket', 'staff')->get();
     }
 }

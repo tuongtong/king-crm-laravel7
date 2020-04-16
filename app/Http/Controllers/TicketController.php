@@ -52,6 +52,7 @@ class TicketController extends Controller
     
     public function getAdd($client_id) {
         $data['client'] = $this->relatedService->client->find($client_id);
+        $data['services'] = $this->relatedService->service->all();
         return view('ticket-add', $data);
     }
     
@@ -63,6 +64,7 @@ class TicketController extends Controller
     public function getUseOld($ticket_id) {
         $data['ticket_old'] = $this->service->find($ticket_id);
         $data['client'] = $data['ticket_old']->client;
+        $data['services'] = $this->relatedService->service->all();
         return view('ticket-add', $data);
     }
     

@@ -3,17 +3,17 @@
 namespace Core\Services;
 
 use Core\Repositories\TicketRepositoryContract;
-use Core\Repositories\TicketRelatedRepository;
+use Core\Services\TicketRelatedService;
 
 class TicketService implements TicketServiceContract
 {
     protected $repository;
-    protected $relatedRepository;
+    protected $relatedService;
 
-    public function __construct(TicketRepositoryContract $repository, TicketRelatedRepository $related)
+    public function __construct(TicketRepositoryContract $repository, TicketRelatedService $related)
     {
         $this->repository = $repository;
-        $this->relatedRepository = $related;
+        $this->relatedService = $related;
     }
 
     public function all()
@@ -40,7 +40,11 @@ class TicketService implements TicketServiceContract
         $log['staff_id'] = UserInfo()->id;
         $log['content'] = "Đang chờ xử lý.";
         $log['is_public'] = true;
-        $this->relatedRepository->log->store($log);
+        $this->relatedService->log->store($log);
+        foreach($req->services as $service_id) {
+            $service = $this->relatedService->service->find($service_id);
+            $ticket->services()->attach($service->id);
+        }
         return $ticket;
     }
 
@@ -70,7 +74,7 @@ class TicketService implements TicketServiceContract
     public function getView($id)
     {
         $data['ticket'] = $this->repository->getView($id);
-        $data['ticket_statuses'] = $this->relatedRepository->status->all();
+        $data['ticket_statuses'] = $this->relatedService->status->all();
         return $data;
     }
 }

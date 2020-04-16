@@ -99,7 +99,11 @@
             <div class="row">
               <div class="col-12">
                 <address>
-                  <h5 class="text-uppercase"><b>Yêu cầu khách hàng:</b> {{ $ticket->requestment }}</h5>
+                  <h5 class="text-uppercase"><b>Yêu cầu khách hàng:</b> 
+                  @foreach($ticket->services as $service)
+                  {{$service->name}}, 
+                  @endforeach
+                  {{ $ticket->requestment }}</h5>
                 </address>
               </div>
             </div>
