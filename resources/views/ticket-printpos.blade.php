@@ -163,7 +163,7 @@
                                 <td style="text-align: justify;"><strong>Đường dẫn trực tiếp:</strong></td>
                             </tr>
                             <tr>
-                                <td style="text-align: justify;">{!! '<i class="fa fa-globe"></i> crm.techking.edu.vn<br>/tracking/'.$ticket->id.'/'.substr($ticket->client->phone, -6) !!}</td>
+                                <td style="text-align: justify;">{!! '<i class="fa fa-globe"></i> crm.techking.vn<br>/tracking/'.$ticket->id.'/'.substr($ticket->client->phone, -6) !!}</td>
                             </tr>
                         </table>
                     </tr>
