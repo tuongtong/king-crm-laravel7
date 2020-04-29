@@ -299,8 +299,8 @@
   function checkDone() {
     var price;
     var input = prompt("Nhập vào phí dịch vụ:");
-    if (input == null || input == "") {
-      price = 0;
+    if (input == null ) {
+      return;
     } else {
       price = input;
     }
