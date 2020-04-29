@@ -19,6 +19,7 @@ class FeedbackController extends Controller
     public function getList()
     {
         $data['tickets'] = ticket::where('ticket_status_id', 5)->with('client', 'feedback')->orderBy('id', 'desc')->paginate(50);
+        // dd($data['tickets']->toArray());
         return view('feedback-list', $data);
     }
 }
