@@ -37,7 +37,7 @@ class TrackingController extends Controller
     public function getByTicket($ticket_id, $sixdigit)
     {
         try {
-            $ticket = $this->ticket->find($ticket_id);
+            $ticket = $this->ticket->findOrFail($ticket_id);
         } catch (ModelNotFoundException $e) {
             return redirect()->route('guest.tracking.index.get')->withErrors('Không tìm thấy số phiếu biên nhận này! Xin kiểm tra lại.');
         }
