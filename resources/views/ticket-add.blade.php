@@ -71,7 +71,7 @@
             </div>
             <div class="form-group">
               <label>Dịch vụ:</label>
-              <select name="services[]" class="form-control select2" multiple="multiple" data-placeholder="Cài Windows? Office?" autofocus required>
+              <select name="services[]" class="form-control select2" multiple="multiple" data-placeholder="Cài Windows? Office?" autofocus>
               @foreach($services as $service)
                 <option value="{{$service->id}}">{{$service->name}}</option>
               @endforeach

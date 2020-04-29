@@ -59,7 +59,11 @@
                   <td>{{$ticket->id}}</td>
                   <td><a href="{{route('staff.ticket.view.get', ['ticket_id' => $ticket->id])}}">{{$ticket->model}}</a></td>
                   <td>{{$ticket->client->name}}</td>
-                  <td>{{$ticket->requestment}}</td>
+                  <td>
+                    @foreach($ticket->services as $service)
+                      {{$service->name}},
+                    @endforeach
+                    {{$ticket->requestment}}</td>
                   <td>
                     <span class="badge bg-{{$ticket->ticketStatus->class}}"><span style="display: none;">{{$ticket->ticketStatus->id}}</span>{{$ticket->ticketStatus->name}}</span>
                   </td>
