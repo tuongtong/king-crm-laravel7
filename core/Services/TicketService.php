@@ -41,9 +41,11 @@ class TicketService implements TicketServiceContract
         $log['content'] = "Đang chờ xử lý.";
         $log['is_public'] = true;
         $this->relatedService->log->store($log);
-        foreach($req->services as $service_id) {
-            $service = $this->relatedService->service->find($service_id);
-            $ticket->services()->attach($service->id);
+        if(isset($req->services)) {
+            foreach($req->services as $service_id) {
+                $service = $this->relatedService->service->find($service_id);
+                $ticket->services()->attach($service->id);
+            }
         }
         return $ticket;
     }
