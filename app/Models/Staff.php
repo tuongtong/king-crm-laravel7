@@ -29,4 +29,14 @@ class Staff extends Authenticatable
     {
         return $this->belongsTo('App\Models\Group', 'group_id');
     }
+    
+    public function isLeader()
+    {
+        return $this->level >2;
+    }
+
+    public function isManager()
+    {
+        return $this->level >3;
+    }
 }

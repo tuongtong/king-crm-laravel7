@@ -43,7 +43,7 @@ class LoginController extends Controller
    
         if(Auth::guard($this->guard)->attempt(array('phone' => $input['phone'], 'password' => $input['password'])))
         {
-            return redirect()->route('staff.ticket.list.get');
+            return redirect()->route('staff.dashboard.view.get');
         }else{
             return redirect()->route('guest.login.get')
                 ->with('error','Email-Address And Password Are Wrong.');

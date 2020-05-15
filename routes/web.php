@@ -23,6 +23,7 @@ Route::get('/login','LoginController@getLogin')->name('guest.login.get');
 Route::post('/login','LoginController@postLogin')->name('guest.login.post');
 Route::group(['prefix' => '','middleware' => 'staff'], function() 
 {
+    Route::get('/','DashboardController@getView')->name('staff.dashboard.view.get');
     Route::get('/checkauth', function ()
     {
         return 'Loged in successed!';
@@ -30,7 +31,6 @@ Route::group(['prefix' => '','middleware' => 'staff'], function()
     Route::get('/afterlogin','LoginController@getAfterLogin')->name('staff.afterlogin.get');
     Route::get('/logout','LoginController@getLogout')->name('staff.logout.get');
     
-    Route::get('/', function() { return redirect()->route('staff.ticket.list.get'); })->name('staff.home.get');
     Route::get('/search', 'SearchController@getSearch')->name('staff.search.get');
 
     Route::group(['prefix' => 'techking'], function() 
