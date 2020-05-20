@@ -52,6 +52,7 @@
               <label for="inputSostt">Số Điện Thoại:</label> {{$payment->client -> phone}}    |    
               <label for="inputSostt">Ngày Sinh:</label> {{$payment->client -> birthday}}
               <input name="payment_id" type="hidden" class="form-control" value="{{$payment->id}}">
+              <input name="client_id" type="hidden" class="form-control" value="{{$payment->client->id}}">
             </div>
             <div class="form-group">
               <label for="number">Số lai:</label>
@@ -96,7 +97,7 @@
           </div>
           <!-- /.card-body -->
           <div class="card-footer">
-            <button type="submit" class="btn btn-primary">Thêm vào</button>
+            <button type="submit" class="btn btn-primary">Lưu thay đổi</button>
             <a onclick="history.go(-1);" class="btn">Quay lại</a>
           </div>
         </form>
