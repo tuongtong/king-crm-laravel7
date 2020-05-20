@@ -45,6 +45,12 @@ class PaymentController extends Controller
         $data['fields'] = field::all();
         return view('payment-edit', $data);
     }
+
+    public function postEdit($payment_id, Request $req) 
+    {
+        $payment_id = $this->service->update($payment_id, $req);
+        return redirect()->route('staff.payment.view.get', ['payment_id' => $payment_id]);
+    }
     
     public function getList() {
         $data['payments'] = $this->service->getList();

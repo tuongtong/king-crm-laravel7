@@ -35,8 +35,9 @@ class PaymentService implements PaymentServiceContract
         return $this->repository->store($data);
     }
 
-    public function update($id, $data)
+    public function update($id, $req)
     {
+        $data = $this->repository->fillable($req);
         return $this->repository->update($id, $data);
     }
 

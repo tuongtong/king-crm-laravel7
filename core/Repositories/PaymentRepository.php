@@ -31,7 +31,8 @@ class PaymentRepository implements PaymentRepositoryContract
 
     public function update($id, $data) {
         $model = $this->find($id);
-        return $model->update($data);
+        $model->update($data);
+        return $model;
     }
 
     public function destroy($id) {

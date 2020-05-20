@@ -44,7 +44,7 @@
         </div>
         <!-- /.card-header -->
         <!-- form start -->
-        <form role="form" action="{{route('staff.payment.add.post')}}" method="post">
+        <form role="form" action="{{route('staff.payment.edit.post', ['payment_id' => $payment->id])}}" method="post">
           {{csrf_field()}}
           <div class="card-body">
             <div class="form-group">
