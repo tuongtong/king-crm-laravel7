@@ -84,7 +84,7 @@
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
           </li>
-          @if(UserInfo()->level>=2)
+          @if(UserInfo()->isManager())
           <li class="nav-item has-treeview">
             <a href="#" class="nav-link ">
               <i class="nav-icon fa fa-briefcase"></i>
@@ -95,19 +95,17 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="{{route('staff.client.list.get')}}" class="nav-link">
-                  <i class="fa nav-icon fa fa-users nav-icon"></i>
-                  <p>Danh bạ khách</p>
-                </a>
-              </li>
-              @if(UserInfo()->level>=3)
-              <li class="nav-item">
                 <a href="{{route('staff.shift.manager.get')}}" class="nav-link">
                   <i class="fa fa-calendar-check-o nav-icon"></i>
                   <p>Xếp làm việc</p>
                 </a>
               </li>
-              @endif
+              <li class="nav-item">
+                <a href="{{route('staff.worklog.list.get')}}" class="nav-link">
+                  <i class="fa fa-history nav-icon"></i>
+                  <p>Xem báo cáo</p>
+                </a>
+              </li>
             </ul>
           </li>
           @endif
@@ -127,12 +125,6 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="{{route('staff.worklog.list.get')}}" class="nav-link">
-                  <i class="fa fa-history nav-icon"></i>
-                  <p>Xem báo cáo</p>
-                </a>
-              </li>
-              <li class="nav-item">
                 <a href="{{route('staff.shift.view.get')}}" class="nav-link">
                   <i class="fa fa-calendar nav-icon"></i>
                   <p>Xem lịch làm việc</p>
@@ -144,14 +136,24 @@
                   <p>Đăng ký lịch làm</p>
                 </a>
               </li>
+              @if(UserInfo()->isOfficial())
               <li class="nav-item">
                 <a href="{{route('staff.statistic.finance.get')}}" class="nav-link">
                   <i class="fa fa-bar-chart nav-icon"></i>
                   <p>Xem thống kê</p>
                 </a>
               </li>
+              @endif
             </ul>
           </li>
+          @if(UserInfo()->isOfficial())
+          <li class="nav-item">
+            <a href="{{route('staff.client.list.get')}}" class="nav-link">
+              <i class="nav-icon fa fa-users"></i>
+              <p>Danh bạ khách</p>
+            </a>
+          </li>
+          @endif
           <li class="nav-item has-treeview">
             <a href="#" class="nav-link ">
               <i class="nav-icon fa fa-wrench"></i>
@@ -233,6 +235,7 @@
               </li>
             </ul>
           </li>
+          @if(UserInfo()->isOfficial())
           <li class="nav-item has-treeview">
             <a href="#" class="nav-link ">
               <i class="nav-icon fa fa-money"></i>
@@ -258,6 +261,7 @@
             <ul class="nav nav-treeview">
             </ul>
           </li>
+          @endif
           <li class="nav-item has-treeview">
             <a href="#" class="nav-link ">
               <i class="nav-icon fa fa-link"></i>
