@@ -66,10 +66,14 @@
               <input name="amount" type="number" class="form-control" id="amount" placeholder="Nhập vào số tiền" required>
             </div>
             <div class="form-group">
+              <label>Ngày nhập phiếu</label>
+              <input type="date" min="2018-01-01" class="form-control" name="created_at" value="" required>
+            </div>
+            <div class="form-group">
               <label for="staff_id">Người lập phiếu:</label>
               <select name="staff_id" id="staff_id" class="form-control select2" style="width: 100%;">
                 @foreach ($staffs as $data)
-                <option value="{{$data->id}}">{{$data->name}}</option>
+                <option value="{{$data->id}}" @if($data->id == UserInfo()->id) checked @endif >{{$data->name}}</option>
                 @endforeach
               </select>
             </div>

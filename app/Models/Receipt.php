@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Receipt extends Model
 {
     public $table = 'receipts';
-    public $fillable = ['id', 'number', 'client_id', 'staff_id', 'field_id', 'branch_id', 'content', 'amount'];
+    public $fillable = ['id', 'number', 'client_id', 'staff_id', 'field_id', 'branch_id', 'content', 'amount', 'created_at'];
     
     public function staff()
     {

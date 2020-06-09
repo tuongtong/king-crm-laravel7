@@ -1,6 +1,6 @@
 @extends('master')
 @section('head')
-<title>KING | Xem phiếu thu #{{$receipt->id}}</title>
+<title>KING | Xem phiếu thu #{{$receipt->number}}</title>
 <link rel="stylesheet" href="{{secure_asset('plugins/datatables/dataTables.bootstrap4.css')}}">
 <link rel="stylesheet" href="{{secure_asset('plugins/iCheck/square/blue.css')}}">
 @stop
@@ -49,7 +49,7 @@
                   <b>Số điện thoại: </b><a href="tel:{{$receipt->client->sdt}}">{{PhoneFormat($receipt->client->phone)}}</a><br>
                   <b>Ngày sinh:</b> {{ date("d/m/Y", strtotime($receipt->client->birthday)) }}<br>
                   <b>Mã khách hàng:</b> {{ $receipt->client->id }}<br>
-                  <b>Ngày lập phiếu:</b> {{ $receipt->created_at->timezone('Asia/Ho_Chi_Minh')->format("d/m/Y - H:i") }}<br>
+                  <b>Ngày lập phiếu:</b> {{ $receipt->created_at->timezone('Asia/Ho_Chi_Minh')->format("d/m/Y") }}<br>
                   <b>Nhân viên lập:</b> {{ $receipt->staff->name }}
                 </address>
               </div>

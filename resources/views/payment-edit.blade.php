@@ -1,6 +1,6 @@
 @extends('master')
 @section('head')
-<title>KING | Sửa phiếu chi</title>
+<title>KING | Sửa phiếu chi #{{$payment->number}}</title>
 <link rel="stylesheet" href="{{secure_asset('plugins/select2/select2.min.css')}}">
 @stop
 @section('main')
@@ -65,6 +65,10 @@
             <div class="form-group">
               <label for="amount">Số tiền:</label>
               <input name="amount" type="number" class="form-control" id="amount" placeholder="Nhập vào số tiền" value="{{$payment->amount}}" required>
+            </div>
+            <div class="form-group">
+              <label>Ngày nhập phiếu</label>
+              <input type="date" min="2018-01-01" class="form-control" name="created_at" value="{{ date('Y-m-d', strtotime($payment->created_at)) }}" required>
             </div>
             <div class="form-group">
               <label for="staff_id">Người lập phiếu:</label>
