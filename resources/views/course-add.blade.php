@@ -71,22 +71,6 @@
                     </select>
                   </div>
                   <div class="form-group col-md-12">
-                    <label>Khách hàng tiềm năng</label>
-                    <select name="alsomatch[]" class="select2" multiple="multiple" data-placeholder="Select a State" style="width: 100%;">
-                      @foreach($course_groups as $data)
-                      <option value="{{$data->id}}">{{$data->name}}</option>
-                      @endforeach
-                    </select>
-                  </div>
-                  <div class="form-group col-md-12">
-                    <label>Loại trừ</label>
-                    <select name="exclude[]" class="select2" multiple="multiple" data-placeholder="Select a State" style="width: 100%;">
-                      @foreach($course_groups as $data)
-                      <option value="{{$data->id}}">{{$data->name}}</option>
-                      @endforeach
-                    </select>
-                  </div>
-                  <div class="form-group col-md-12">
                     <label>Số buổi</label>
                     <input type="number" class="form-control" name="lesson" value="{{ old('lesson') }}" required>
                   </div>

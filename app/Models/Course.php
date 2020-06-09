@@ -20,7 +20,7 @@ class Course extends Model
     public $timestamps = true;
     public $table = 'courses';
     public $dates = ['deleted_at'];
-    public $fillable = ['name', 'shortname', 'lesson', 'opening_at', 'schedule', 'maxseat', 'teacher', 'tuition', 'note', 'exclude' , 'alsomatch', 'is_expected'];
+    public $fillable = ['name', 'shortname', 'lesson', 'opening_at', 'schedule', 'maxseat', 'teacher', 'tuition', 'note', 'exclude' , 'alsomatch', 'is_expected', 'course_group_id'];
     
     public function courseStudents()
     {

@@ -3,6 +3,8 @@
 @section('head')
 <title>KING | Sửa thông tin lớp học</title>
 <link rel="stylesheet" href="{{ asset('bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css') }}">
+<link rel="stylesheet" href="{{ asset('plugins/select2/css/select2.min.css') }}">
+<link rel="stylesheet" href="{{ asset('plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css') }}">
 @stop
 
 @section('main')
@@ -61,6 +63,14 @@
                     </div>
                   </div>
                   <div class="form-group col-md-12">
+                    <label>Nhóm môn học</label>
+                    <select name="course_group_id" class="select2" data-placeholder="Select a State" style="width: 100%;">
+                      @foreach($course_groups as $data)
+                      <option value="{{$data->id}}" @if($data->id == $course->course_group_id) checked @endif >{{$data->name}}</option>
+                      @endforeach
+                    </select>
+                  </div>
+                  <div class="form-group col-md-12">
                     <label>Số buổi</label>
                     <input type="number" class="form-control" name="lesson" value="{{$course->lesson}}" required>
                   </div>
@@ -102,10 +112,11 @@
   <!-- /.content -->
 </div>
 <!-- /.content-wrapper -->
+@stop
 
+@section('script')
 <!-- bootstrap datepicker -->
-<script src="{{ asset('bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js') }}"></script>
-<script src="{{ asset('bower_components/select2/dist/js/select2.full.min.js') }}"></script>
+<script src="{{ asset('plugins/select2/js/select2.full.min.js') }}"></script>
 <script>
   /* global $ */
   $(function() {

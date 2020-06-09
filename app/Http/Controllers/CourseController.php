@@ -36,6 +36,7 @@ class CourseController extends Controller
     }
 
     public function getEdit($course_id) {
+        $data['course_groups'] = $this->relateService->group->all();
         $data['course'] = $this->service->find($course_id);
         return view('course-edit', $data);
     }

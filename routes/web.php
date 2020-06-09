@@ -140,6 +140,7 @@ Route::group(['prefix' => '','middleware' => 'staff'], function()
         Route::get('/edit/{course_id}', 'CourseController@getEdit')->name('staff.course.edit.get')->middleware('leader');
         Route::post('/edit/{course_id}', 'CourseController@postEdit')->name('staff.course.edit.post')->middleware('leader');
         Route::get('/log', 'CourseController@getLogList')->name('staff.courselog.list.get');
+        Route::get('/stat', 'CourseStat@getIndex');
     });
 
     Route::group(['prefix' => 'coursestudents'], function ()
