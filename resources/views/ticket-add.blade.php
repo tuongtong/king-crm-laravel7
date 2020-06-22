@@ -28,11 +28,17 @@
     <!-- general form elements -->
     <div class="col-md-12">
       @if(count($client->tickets)>0)
-      <div class="card card-default">
-        <!--<div class="card-header with-border">-->
-        <!--  <h3 class="card-title">Biên nhận trước đó</h3>-->
-        <!--</div>-->
-        <!-- /.box-header -->
+      <div class="card card-info collapsed-card card-outline">
+              <div class="card-header">
+                <h3 class="card-title">Thông tin các máy trước. </h3>
+
+                <div class="card-tools">
+                  <button type="button" class="btn btn-tool" data-widget="collapse"><i class="fa fa-plus"></i>
+                  </button>
+                </div>
+                <!-- /.card-tools -->
+              </div>
+              <!-- /.card-header -->
         <div class="card-body">
           <table class="table table-bordered">
             <tr>
@@ -51,7 +57,8 @@
             @endforeach
           </table>
         </div>
-      </div>
+              <!-- /.card-body -->
+            </div>
       @endif
       <div class="card card-primary">
         <div class="card-header">
