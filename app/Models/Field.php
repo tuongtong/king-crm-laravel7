@@ -18,4 +18,9 @@ class Field extends Model
     {
         return $this->hasMany('App\Models\Payment');
     }
+
+    public function subfields()
+    {
+        return $this->hasMany('App\Models\Subfield');
+    }
 }

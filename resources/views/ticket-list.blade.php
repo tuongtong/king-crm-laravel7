@@ -45,7 +45,6 @@
                 <thead>
                 <tr>
                   <th>Số phiếu</th>
-                  <th>Dòng Máy</th>
                   <th>Tên khách hàng</th>
                   <th>Yêu cầu</th>
                   <th>Tiến độ</th>
@@ -56,8 +55,7 @@
                 <tbody>
                 @foreach($tickets as $ticket)
                 <tr>
-                  <td>{{$ticket->id}}</td>
-                  <td><a href="{{route('staff.ticket.view.get', ['ticket_id' => $ticket->id])}}">{{$ticket->model}}</a></td>
+                  <td><a href="{{route('staff.ticket.view.get', ['ticket_id' => $ticket->id])}}">#{{$ticket->id}}</a><br><a href="{{route('staff.ticket.view.get', ['ticket_id' => $ticket->id])}}">{{$ticket->model}}</a></td>
                   <td>{{$ticket->client->name}}</td>
                   <td>
                     @foreach($ticket->services as $service)

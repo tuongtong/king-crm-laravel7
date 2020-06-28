@@ -78,6 +78,7 @@ Route::group(['prefix' => '','middleware' => 'staff'], function()
         Route::get('/{payment_id}', 'PaymentController@getView')->name('staff.payment.view.get');
         Route::get('/print/{payment_id}', 'PaymentController@getPrint')->name('staff.payment.print.get');
         Route::get('/add/{client_id}', 'PaymentController@getAdd')->name('staff.payment.add.get')->middleware('manager');
+        Route::get('/addmore', 'PaymentController@getAddmore')->name('staff.payment.addmore.get')->middleware('manager');
         Route::post('/add', 'PaymentController@postAdd')->name('staff.payment.add.post')->middleware('manager');
         Route::get('/edit/{payment_id}', 'PaymentController@getEdit')->name('staff.payment.edit.get')->middleware('manager');
         Route::post('/edit/{payment_id}', 'PaymentController@postEdit')->name('staff.payment.edit.post')->middleware('manager');

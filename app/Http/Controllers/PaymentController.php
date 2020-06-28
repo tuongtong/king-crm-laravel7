@@ -30,6 +30,13 @@ class PaymentController extends Controller
         $data['fields'] = field::all();
         return view('payment-add', $data);
     }
+
+    public function getAddmore(ClientServiceContract $client_service) {
+        $data['branches'] = branch::all();
+        $data['staffs'] = staff::all();
+        $data['fields'] = field::all();
+        return view('payment-addmore', $data);
+    }
     
     public function postAdd(Request $req) 
     {
