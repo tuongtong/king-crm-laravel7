@@ -140,7 +140,7 @@
                   <td>
                     @if( !$course->isFull() )
                     <span style="width: 88px;" class="btn btn-warning">
-                    @elseif( $course->isFull() )
+                    @elseif( $course->isDone() )
                     <span style="width: 88px;" class="btn btn-success">
                     @endif
                     {{ $course->sumDone() }}/{{ $course->sum() }}/{{ $course->maxseat }}</span>

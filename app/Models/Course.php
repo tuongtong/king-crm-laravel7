@@ -44,6 +44,11 @@ class Course extends Model
         return $count;
     }
 
+    public function isDone()
+    {
+        return $this->sumDone()==$this->sum();
+    }
+
     public function sumDeposited() {
         $students_done = $this->courseStudents;
         $count = 0;
