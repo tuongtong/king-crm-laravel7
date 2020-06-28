@@ -138,10 +138,10 @@
                   <td>{{ $course->lesson }}</td>
                   <td>{{ $course->schedule }}</td>
                   <td>
-                    @if( !$course->isFull() )
-                    <span style="width: 88px;" class="btn btn-warning">
-                    @elseif( $course->isDone() )
+                    @if( $course->isDone() )
                     <span style="width: 88px;" class="btn btn-success">
+                    @else
+                    <span style="width: 88px;" class="btn btn-warning">
                     @endif
                     {{ $course->sumDone() }}/{{ $course->sum() }}/{{ $course->maxseat }}</span>
                   </td>
