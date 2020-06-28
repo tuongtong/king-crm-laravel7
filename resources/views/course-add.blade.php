@@ -76,7 +76,7 @@
                   </div>
                   <div class="form-group col-md-12">
                     <label>Ngày khai giảng</label>
-                    <input type="date" min="2018-01-01" class="form-control" name="opening_at" value="{{ old('opening_at') }}" required>
+                    <input type="date" min="2018-01-01" class="form-control" name="opening_at" value="{{ old('opening_at') }}">
                   </div>
                   <div class="form-group col-md-12">
                     <label>Lịch học (Thứ - Tiết)</label>

@@ -51,7 +51,7 @@
             <ul class="nav flex-column">
               <li class="nav-item">
                 <div class="nav-link">
-                  Khai giảng <span class="float-right">{{$course->opening_at}}</span>
+                  Khai giảng <span class="float-right">@if($course->opening_at==NULL) Chưa có @else {{$course->opening_at}} @endif</span>
                 </div>
               </li>
               <li class="nav-item">
