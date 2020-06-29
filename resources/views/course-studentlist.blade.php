@@ -137,7 +137,7 @@
                 </tr>
               </thead>
               <tbody>
-                @foreach($course->courseStudents as $data)
+                @foreach($students as $data)
                 <tr>
                   <td>{!! $data->client->linkName() !!}</a></td>
                   <td>{!! $data->client->linkPhone() !!}</td>
@@ -187,9 +187,7 @@
 <script>
   $(function() {
     $("#example1").DataTable({
-      "order": [
-        [0, "desc"]
-      ],
+      "ordering": false,
       "language": {
         "sProcessing": "Đang xử lý...",
         "sLengthMenu": "Xem _MENU_ mục",
@@ -209,9 +207,7 @@
       }
     });
     $("#example2").DataTable({
-      "order": [
-        [0, "desc"]
-      ],
+      "ordering": false,
       "language": {
         "sProcessing": "Đang xử lý...",
         "sLengthMenu": "Xem _MENU_ mục",

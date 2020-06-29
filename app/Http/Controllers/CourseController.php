@@ -48,6 +48,10 @@ class CourseController extends Controller
     
     public function getView($course_id) {
         $data['course'] = $this->service->show($course_id);
+        $data['students'] =  $data['course']->courseStudents->map(function ($item, $key) {
+            $item->client->first_name = array_slice(explode(' ', $item->client->name), -1)[0];
+            return $item;
+        })->sortBy('client.first_name');
         return view('course-studentlist', $data);
     }
 
