@@ -69,4 +69,23 @@ class CourseController extends Controller
         $data['course_logs'] = $this->relateService->log->index();
         return view('course-loglist', $data);
     }
+
+    public function getDelete($course_id)
+    {
+        $data['course'] = $this->service->find($course_id);
+        return view('course-delete', $data);
+    }
+
+    public function postDelete($course_id, Request $req)
+    {
+        $course = $this->service->find($course_id);
+        if($req->delete_shortname != $course->shortname) {
+            return redirect()->back()->withErrors('Xác nhận sai, xin thử lại!');
+        }
+
+        Course_student::where('course_id', $course_id)->delete();
+        $course->delete();
+
+        return redirect()->route('staff.course.list.get')->with('success', 'Xoá lớp thành công!');
+    }
 }

@@ -97,9 +97,21 @@
                   Tối đa <span class="float-right">{{ $course->maxseat }}</span>
                 </div>
               </li>
+              <li class="nav-item">
+                <div class="nav-link">
+                  Tối đa <span class="float-right">{{ $course->maxseat }}</span>
+                </div>
+              </li>
+              <li class="nav-item">
+                <div class="nav-link">
+                  Tối đa <span class="float-right">{{ $course->maxseat }}</span>
+                </div>
+              </li>
             </ul>
           </div>
           <div class="card-footer">
+            <a class="btn btn-default"  href="{{ route('staff.course.exportphone.get', ['course_id' => $course->id]) }}">Danh sách SĐT</a>
+            <a class="btn btn-default"  href="{{ route('staff.course.exportexcel.get', ['course_id' => $course->id]) }}">Tải Excel</a>
             <div class="btn-group float-right">
               <a href="{{ route('staff.course.edit.get', ['course_id' => $course->id]) }}" class="btn btn-primary">Sửa thông tin lớp</a>
               <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
@@ -107,8 +119,7 @@
                 <span class="sr-only">Toggle Dropdown</span>
               </button>
               <div class="dropdown-menu" role="menu">
-                <a class="dropdown-item" href="{{ route('staff.course.exportphone.get', ['course_id' => $course->id]) }}">Danh sách SĐT</a>
-                <a class="dropdown-item" href="{{ route('staff.course.exportexcel.get', ['course_id' => $course->id]) }}">Tải Excel</a>
+                <a class="dropdown-item" href="{{ route('staff.course.delete.get', ['course_id' => $course->id]) }}">Xoá lớp</a>
               </div>
             </div>
           </div>

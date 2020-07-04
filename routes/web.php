@@ -142,6 +142,8 @@ Route::group(['prefix' => '','middleware' => 'staff'], function()
         Route::post('/edit/{course_id}', 'CourseController@postEdit')->name('staff.course.edit.post')->middleware('leader');
         Route::get('/log', 'CourseController@getLogList')->name('staff.courselog.list.get');
         Route::get('/stat', 'CourseStat@getIndex');
+        Route::get('/delete/{course_id}', 'CourseController@getDelete')->name('staff.course.delete.get');
+        Route::post('/delete/{course_id}', 'CourseController@postDelete')->name('staff.course.delete.post');
     });
 
     Route::group(['prefix' => 'coursestudents'], function ()
