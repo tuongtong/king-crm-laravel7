@@ -66,7 +66,7 @@
                 <u>Thông tin khách hàng:</u>
                 <address>
                   <strong class="text-uppercase">{!! $ticket->client->linkName() !!}</strong><br>
-                  <b>Số điện thoại:</b> <a href="tel:{{$ticket->client->phone}}">{{ PhoneFormat($ticket->client->phone) }}</a><br>
+                  <b>Số điện thoại:</b> {!! ($ticket->client->linkPhone()) !!}<br>
                   <b>Ngày sinh:</b> {{ date("d/m/Y", strtotime($ticket->client->birthday)) }}<br>
                   <b>Mã khách hàng:</b> KH{{ $ticket->client->id }}<br>
                   <b>Ngày nhận máy:</b> {{ $ticket->created_at->timezone('Asia/Ho_Chi_Minh')->format("d/m/Y - H:i") }}<br>

@@ -61,7 +61,7 @@
                   </div>
                   <div class="form-group">
                     <label for="zalo">Zalo:</label>
-                    <input name="zalo" type="number" class="form-control" id="zalo" placeholder="Số điện thoại Zalo">
+                    <input name="zalo" type="number" class="form-control" id="zalo" placeholder="Số điện thoại Zalo" @if(isset($phone)) value="{{$phone}}" @endif>
                   </div>
                   <div class="form-group">
                     <label for="email">Email:</label>

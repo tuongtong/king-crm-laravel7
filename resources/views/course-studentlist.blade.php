@@ -126,6 +126,7 @@
             <table id="example1" class="table table-bordered table-striped">
               <thead>
                 <tr>
+                  <th>STT</th>
                   <th>Tên khách hàng</th>
                   <th>Số điện thoại</th>
                   <th>Ưu đãi</th>
@@ -137,17 +138,23 @@
                 </tr>
               </thead>
               <tbody>
-                @foreach($students as $data)
+                @foreach($students as $i => $data)
                 <tr>
-                  <td>{!! $data->client->linkName() !!}</a></td>
+                  <td>{{ $i+1 }}</td>
+                  <td>{!! $data->client->linkName() !!}</td>
                   <td>{!! $data->client->linkPhone() !!}</td>
                   <td>{{ $data->deal_rate }}%</td>
-                  <td>{{ MoneyFormat($course->tuition*(1-$data->deal_rate/100)) }}</td>
+                  <td>{{ MoneyFormat(TuitionAfter($course->tuition, $data->deal_rate)) }}</td>
                   <td>{{ MoneyFormat($data->tuition_done) }}</td>
                   <td>
-                    @if( ($course->tuition*(1-$data->deal_rate/100)) - $data->tuition_done <= 0 ) <span class="badge bg-success">HOÀN THÀNH</span>
-                      @else
-                      {{ MoneyFormat(($course->tuition*(1-$data->deal_rate/100)) - $data->tuition_done) }}</td>
+                  @if($data->tuition_done > 0)
+                    @if( $data->tuition_done >= TuitionAfter($course->tuition, $data->deal_rate) ) 
+                      <span class="badge bg-success">HOÀN THÀNH</span>
+                    @else
+                      <span class="badge bg-info">{{TuitionAfter($course->tuition, $data->deal_rate) - $data->tuition_done}}</span>
+                    @endif
+                  @else
+                    {{ MoneyFormat(($course->tuition*(1-$data->deal_rate/100)) - $data->tuition_done) }}
                   @endif
                   </td>
                   <td>{{$data->deal_note}}</td>

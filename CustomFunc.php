@@ -1,4 +1,5 @@
 <?php
+
 function UserInfo() {
     return Auth::guard('staff')->user();
 }
@@ -17,6 +18,10 @@ function MoneyFormat($data) {
 
 function DateFormat($data) {
     return date('d/m/Y', strtotime($data));
+}
+
+function TuitionAfter($tuition, $rate) {
+    return round($tuition * (1 - ($rate/100)));
 }
 
 ?>
