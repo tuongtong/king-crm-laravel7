@@ -21,7 +21,13 @@ class Course extends Model
     public $table = 'courses';
     public $dates = ['deleted_at'];
     public $fillable = ['name', 'shortname', 'lesson', 'opening_at', 'schedule', 'maxseat', 'teacher', 'tuition', 'note', 'exclude' , 'alsomatch', 'is_expected', 'course_group_id'];
-    
+    public $revenue = 0;
+    public $collected = 0;
+
+    public function __construct()
+    {
+    }
+
     public function courseStudents()
     {
         return $this->hasMany('App\Models\Course_student');
@@ -55,7 +61,26 @@ class Course extends Model
         foreach($students_done as $data) {
             if($data->tuition_done > 0  or $data->deal_rate == 100) $count++;
         }
+        $count -= $this->sumDone();
         return $count;
+    }
+
+    public function revenue()
+    {
+        $revenue = 0;
+        foreach($this->courseStudents as $student) {
+            $revenue += TuitionAfter($this->tuition, $student->deal_rate);
+        } 
+        return $revenue;
+    }
+
+    public function collected()
+    {
+        $collected = 0;
+        foreach($this->courseStudents as $student) {
+            $collected += $student->tuition_done;
+        } 
+        return $collected;
     }
 
     public function isFull()

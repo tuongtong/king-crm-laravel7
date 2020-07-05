@@ -47,7 +47,7 @@
             <h3 class="widget-user-username">{{$course->name}}</h3>
             <h5 class="widget-user-desc">{{$course->schedule}}</h5>
           </div>
-          <div class="card-footer p-0">
+          <div class="card-body p-0">
             <ul class="nav flex-column">
               <li class="nav-item">
                 <div class="nav-link">
@@ -70,6 +70,20 @@
                 </div>
               </li>
             </ul>
+          </div>
+          <div class="card-footer">
+            <a class="btn btn-default"  href="{{ route('staff.course.exportphone.get', ['course_id' => $course->id]) }}">Danh sách SĐT</a>
+            <a class="btn btn-default"  href="{{ route('staff.course.exportexcel.get', ['course_id' => $course->id]) }}">Tải Excel</a>
+            <div class="btn-group float-right">
+              <a href="{{ route('staff.course.edit.get', ['course_id' => $course->id]) }}" class="btn btn-primary">Sửa thông tin lớp</a>
+              <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+                <span class="caret"></span>
+                <span class="sr-only">Toggle Dropdown</span>
+              </button>
+              <div class="dropdown-menu" role="menu">
+                <a class="dropdown-item" href="{{ route('staff.course.delete.get', ['course_id' => $course->id]) }}">Xoá lớp</a>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -99,29 +113,20 @@
               </li>
               <li class="nav-item">
                 <div class="nav-link">
-                  Tối đa <span class="float-right">{{ $course->maxseat }}</span>
+                  Dự kiến thu <span class="float-right">{{ MoneyFormat($course->revenue()) }}</span>
                 </div>
               </li>
               <li class="nav-item">
                 <div class="nav-link">
-                  Tối đa <span class="float-right">{{ $course->maxseat }}</span>
+                  Đã thu <span class="float-right">{{ MoneyFormat($course->collected()) }}</span>
+                </div>
+              </li>
+              <li class="nav-item">
+                <div class="nav-link">
+                  Chưa thu <span class="float-right">{{ MoneyFormat($course->revenue()-$course->collected()) }}</span>
                 </div>
               </li>
             </ul>
-          </div>
-          <div class="card-footer">
-            <a class="btn btn-default"  href="{{ route('staff.course.exportphone.get', ['course_id' => $course->id]) }}">Danh sách SĐT</a>
-            <a class="btn btn-default"  href="{{ route('staff.course.exportexcel.get', ['course_id' => $course->id]) }}">Tải Excel</a>
-            <div class="btn-group float-right">
-              <a href="{{ route('staff.course.edit.get', ['course_id' => $course->id]) }}" class="btn btn-primary">Sửa thông tin lớp</a>
-              <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
-                <span class="caret"></span>
-                <span class="sr-only">Toggle Dropdown</span>
-              </button>
-              <div class="dropdown-menu" role="menu">
-                <a class="dropdown-item" href="{{ route('staff.course.delete.get', ['course_id' => $course->id]) }}">Xoá lớp</a>
-              </div>
-            </div>
           </div>
         </div>
       </div>
