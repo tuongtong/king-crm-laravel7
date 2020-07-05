@@ -154,9 +154,10 @@
                 </tr>
               </thead>
               <tbody>
-                @foreach($students as $i => $data)
+              @php $i=1 @endphp 
+                @foreach($students as $data)
                 <tr>
-                  <td>{{ $i+1 }}</td>
+                  <td>{{ $i++ }}</td>
                   <td>{!! $data->client->linkName() !!}</td>
                   <td>{!! $data->client->linkPhone() !!}</td>
                   <td>{{ $data->deal_rate }}%</td>
