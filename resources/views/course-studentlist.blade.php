@@ -56,7 +56,7 @@
               </li>
               <li class="nav-item">
                 <div class="nav-link">
-                  Học phí <span class="float-right">{{$course->tuition}}</span>
+                  Học phí <span class="float-right">{{ MoneyFormat($course->tuition) }}</span>
                 </div>
               </li>
               <li class="nav-item">

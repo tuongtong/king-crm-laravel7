@@ -105,7 +105,7 @@
   $(function () {
     $("#example1").DataTable({
         // "order": false,
-        "order": [[ 4, "asc" ]],
+        "order": [[ 3, "asc" ]],
         "lengthMenu": [ 500 ],
         "bPaginate": false,
         "language": {
