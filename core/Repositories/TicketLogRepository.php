@@ -1,13 +1,13 @@
 <?php
 
 namespace Core\Repositories;
-use App\Models\Ticket_log;
+use App\Models\TicketLog;
 
 class TicketLogRepository implements TicketLogRepositoryContract
 {
     protected $model;
 
-    public function __construct(ticket_log $model)
+    public function __construct(ticketLog $model)
     {
         $this->model = $model;
     }

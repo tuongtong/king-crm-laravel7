@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\ModelNotFoundException;
 
 use App\Http\Requests;
 use App\Models\Ticket;
-use App\Models\Ticket_log as log;
+use App\Models\TicketLog as log;
 use App\Models\Client;
 
 class TrackingController extends Controller

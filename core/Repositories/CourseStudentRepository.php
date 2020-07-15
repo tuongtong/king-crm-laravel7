@@ -1,13 +1,13 @@
 <?php
 
 namespace Core\Repositories;
-use App\Models\Course_student;
+use App\Models\CourseStudent;
 
 class CourseStudentRepository implements CourseStudentRepositoryContract
 {
     protected $model;
 
-    public function __construct(course_student $model)
+    public function __construct(courseStudent $model)
     {
         $this->model = $model;
     }

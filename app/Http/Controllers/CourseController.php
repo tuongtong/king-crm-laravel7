@@ -5,8 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Core\Services\CourseServiceContract;
 use Core\Services\CourseRelatedService;
-use App\Models\Course_student;
-use App\Models\Course_log;
+use App\Models\CourseStudent;
 
 class CourseController extends Controller
 {

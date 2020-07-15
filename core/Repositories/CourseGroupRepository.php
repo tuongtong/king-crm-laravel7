@@ -1,13 +1,13 @@
 <?php
 
 namespace Core\Repositories;
-use App\Models\Course_group;
+use App\Models\CourseGroup;
 
 class CourseGroupRepository implements CourseGroupRepositoryContract
 {
     protected $model;
 
-    public function __construct(Course_group $model)
+    public function __construct(CourseGroup $model)
     {
         $this->model = $model;
     }

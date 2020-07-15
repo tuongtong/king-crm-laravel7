@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Course_group extends Model
+class CourseGroup extends Model
 {
     protected $table = 'course_groups';
 

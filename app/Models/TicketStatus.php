@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Ticket_status extends Model
+class TicketStatus extends Model
 {
     public $timestamps = false;
     protected $table = 'ticket_statuses';

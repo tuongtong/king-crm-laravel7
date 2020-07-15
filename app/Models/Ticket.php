@@ -22,12 +22,12 @@ class Ticket extends Model
     
     public function ticketLogs()
     {
-        return $this->hasMany('App\Models\Ticket_log')->orderBy('id', 'desc');
+        return $this->hasMany('App\Models\TicketLog')->orderBy('id', 'desc');
     }
     
     public function ticketStatus()
     {
-        return $this->belongsTo('App\Models\Ticket_status');
+        return $this->belongsTo('App\Models\TicketStatus');
     }
 
     public function feedback()

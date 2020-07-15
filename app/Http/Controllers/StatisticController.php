@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
-use App\Models\Course_student;
+use App\Models\CourseStudent;
 use App\Models\Ticket;
 use App\Models\Receipt;
 use App\Models\Payment;

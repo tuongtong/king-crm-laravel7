@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class Course_student extends Model
+class CourseStudent extends Model
 {
     public $timestamps = true;
     protected $table = 'course_students';

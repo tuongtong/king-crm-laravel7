@@ -1,13 +1,13 @@
 <?php
 
 namespace Core\Repositories;
-use App\Models\Ticket_status;
+use App\Models\TicketStatus;
 
 class TicketStatusRepository implements TicketStatusRepositoryContract
 {
     protected $model;
 
-    public function __construct(ticket_status $model)
+    public function __construct(ticketStatus $model)
     {
         $this->model = $model;
     }
