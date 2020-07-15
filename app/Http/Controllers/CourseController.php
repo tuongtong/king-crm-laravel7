@@ -65,11 +65,6 @@ class CourseController extends Controller
         return $this->service->download($course_id);
     }
 
-    public function getLogList() {
-        $data['course_logs'] = $this->relateService->log->index();
-        return view('course-loglist', $data);
-    }
-
     public function getDelete($course_id)
     {
         $data['course'] = $this->service->find($course_id);

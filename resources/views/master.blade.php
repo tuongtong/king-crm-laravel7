@@ -227,12 +227,6 @@
                   <p>Thêm lớp mới</p>
                 </a>
               </li>
-              <li class="nav-item">
-                <a href="{{route('staff.courselog.list.get')}}" class="nav-link">
-                  <i class="fa fa-history nav-icon"></i>
-                  <p>Nhật ký lớp</p>
-                </a>
-              </li>
             </ul>
           </li>
           @if(UserInfo()->isOfficial())
