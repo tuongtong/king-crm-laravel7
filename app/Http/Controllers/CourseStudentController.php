@@ -18,7 +18,7 @@ class CourseStudentController extends Controller
     protected $service;
     protected $course_service;
     protected $client_service;
-    public function __construct(course_student $model, CourseStudentServiceContract $service, CourseServiceContract $course_service, ClientServiceContract $client_service)
+    public function __construct(CourseStudent $model, CourseStudentServiceContract $service, CourseServiceContract $course_service, ClientServiceContract $client_service)
     {
         $this->model = $model;
         $this->service = $service;
