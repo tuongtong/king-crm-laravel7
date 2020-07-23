@@ -89,7 +89,7 @@ class Course extends Model
 
     public function getPotentials()
     {
-        $client_ids = CourseStudentwhereIn('course_id', $this->getAlsoMatch())->whereNotIn('course_id', $this->getExcludes())->pluck('client_id')->toArray();
+        $client_ids = CourseStudent::whereIn('course_id', $this->getAlsoMatch())->whereNotIn('course_id', $this->getExcludes())->pluck('client_id')->toArray();
         return Client::whereIn('id', $client_ids)->get();
     }
 }
