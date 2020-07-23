@@ -3,30 +3,17 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Course extends Model
 {
-    /**
-     * The attributes that should be casted to native types.
-     *
-     * @var array
-     */
     protected $casts = [
         'exclude' => 'array',
         'alsomatch' => 'array'
     ];
-
-    public $timestamps = true;
-    public $table = 'courses';
-    public $dates = ['deleted_at'];
+    
+    public $timestamps = false;
     public $fillable = ['name', 'shortname', 'lesson', 'opening_at', 'schedule', 'maxseat', 'teacher', 'tuition', 'note', 'exclude' , 'alsomatch', 'is_expected', 'course_group_id'];
-    public $revenue = 0;
-    public $collected = 0;
-
-    public function __construct()
-    {
-    }
+    
 
     public function courseStudents()
     {

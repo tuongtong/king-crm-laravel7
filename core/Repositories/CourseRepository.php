@@ -7,7 +7,7 @@ class CourseRepository implements CourseRepositoryContract
 {
     protected $model;
 
-    public function __construct(course $model)
+    public function __construct(Course $model)
     {
         $this->model = $model;
     }
