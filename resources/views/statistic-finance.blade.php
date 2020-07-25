@@ -174,7 +174,7 @@
                   <th>Chi</th>
                   <th>Lợi nhuận</th>
                 </tr>
-                @for($i=0; $i<6; $i++)
+                @for($i=3; $i<9; $i++)
                 <tr>
                   <td>Tháng {{$i+1}}</td> 
                   <td>{{MoneyFormat($receipt_count[$f][$i])}}</td>
