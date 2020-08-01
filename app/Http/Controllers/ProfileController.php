@@ -16,18 +16,18 @@ class ProfileController extends Controller
     
     public function postEdit(Request $request) {
         $data = staff::find(UserInfo()->id);
-        if (strlen($request->inputMatkhau) > 0) {
-            if ($request->inputMatkhau == $request->inputReMatkhau) {
-                $data->matkhau =Hash::make($request->inputMatkhau);
+        if ($request->password != null) {
+            if ($request->password == $request->password_confirmation) {
+                $data->password =Hash::make($request->password);
             } else {
                 return Redirect::back()->withErrors(['Mật khẩu nhập lại không đúng!']);
             }
         } 
-        $data->sdt = $request->inputSdt;
-        $data->ten = $request->inputTen;
-        $data->ngaysinh = $request->inputNgaysinh;
+        $data->phone = $request->phone;
+        $data->name = $request->name;
+        $data->birthday = $request->birthday;
         $data->save();
         
-        return redirect()->route('staff.profile.edit.get');
+        return redirect()->route('staff.profile.edit.get')->with('success', 'Lưu thông tin thành công!');
     }
 }

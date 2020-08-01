@@ -25,6 +25,17 @@
     <!-- Main content -->
     <section class="content">
       <!-- general form elements -->
+      @if (session('success'))
+      <div class="row">
+        <div class="col-md-12">
+          <div class="alert alert-success alert-dismissible">
+            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+            <h5><i class="icon fa fa-check"></i> Thành công!</h5>
+            {{ session('success') }}
+          </div>
+        </div>
+      </div>
+      @endif
               @if($errors->any())
               <div class="alert alert-warning alert-dismissible">
                 <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
@@ -38,28 +49,28 @@
               </div>
               <!-- /.card-header -->
               <!-- form start -->
-              <form role="form" action="/nhanvien/canhan" method="post">
+              <form role="form" action="{{route('staff.profile.edit.post')}}" method="post">
                 {{csrf_field()}}
                 <div class="card-body">
                   <div class="form-group">
-                    <label for="inputSdt">Số điện thoại:</label>
-                    <input name="inputSdt" pattern="[0-9]{10}" class="form-control" id="inputSdt" value="{{UserInfo()->sdt}}" autofocus required>
+                    <label for="phone">Số điện thoại:</label>
+                    <input name="phone" pattern="[0-9]{10}" class="form-control" id="phone" value="{{UserInfo()->phone}}" autofocus required>
                   </div>
                   <div class="form-group">
-                    <label for="inputTen">Họ và tên:</label>
-                    <input name="inputTen" type="text" class="form-control" id="inputTen" value="{{UserInfo()->ten}}" required>
+                    <label for="name">Họ và tên:</label>
+                    <input name="name" type="text" class="form-control" id="name" value="{{UserInfo()->name}}" required>
                   </div>
                   <div class="form-group">
-                    <label for="inputNgaysinh">Ngày sinh:</label>
-                    <input name="inputNgaysinh" type="date" class="form-control" id="inputNgaysinh" value="{{UserInfo()->ngaysinh}}">
+                    <label for="birthday">Ngày sinh:</label>
+                    <input name="birthday" type="date" class="form-control" id="inputNgaysinh" value="{{UserInfo()->birthday}}">
                   </div>
                   <div class="form-group">
-                    <label for="inputMatkhau">Mật khẩu mới:</label>
-                    <input name="inputMatkhau" type="password" class="form-control" id="inputMatkhau" placeholder="(Bỏ trống nếu không thay đổi)">
+                    <label for="password">Mật khẩu mới:</label>
+                    <input name="password" type="password" class="form-control" id="password" placeholder="(Bỏ trống nếu không thay đổi)">
                   </div>
                   <div class="form-group">
-                    <label for="inputReMatkhau">Nhập lại mật khẩu:</label>
-                    <input name="inputReMatkhau" type="password" class="form-control" id="inputReMatkhau" value="">
+                    <label for="password_confirmation">Nhập lại mật khẩu:</label>
+                    <input name="password_confirmation" type="password" class="form-control" id="password_confirmation" placeholder="(Bỏ trống nếu không thay đổi)">
                   </div>
                 </div>
                 <!-- /.card-body -->
